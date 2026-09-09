@@ -133,7 +133,7 @@ function FramelessPixelRole({ title, isOutline = false, color, glowColor, gradie
 }
 
 export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => {
-    const { language } = usePortfolio();
+    const { language, isDark } = usePortfolio();
     const isId = language === "id";
     const [isHovered, setIsHovered] = React.useState(false);
     const [isTextAnimated, setIsTextAnimated] = React.useState(false);
@@ -158,10 +158,10 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
         }
     });
 
-    const cardBgDark = useTransform(
+    const cardBg = useTransform(
         localProgress,
         [0.8, 1],
-        ["#091329", "#02040a"]
+        isDark ? ["#091329", "#02040a"] : ["#f1f5f9", "#ffffff"]
     );
 
     // Giant Frameless Pixel Typography for the 6 requested roles with Tron Cyberpunk styling
@@ -169,55 +169,55 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
         <FramelessPixelRole
             key="role-1"
             title="AI & MACHINE LEARNING ENGINEER"
-            gradient="linear-gradient(to right, #00f0ff, #ffffff, #00ff66)"
-            color="#00f0ff"
-            glowColor="rgba(0,240,255,0.6)"
+            gradient={isDark ? "linear-gradient(to right, #00f0ff, #ffffff, #00ff66)" : "linear-gradient(to right, #0284c7, #0f172a, #16a34a)"}
+            color={isDark ? "#00f0ff" : "#0284c7"}
+            glowColor={isDark ? "rgba(0,240,255,0.6)" : "rgba(2,132,199,0.3)"}
         />,
-        <PixelArtGem key="gem-1" color="#00f0ff" />,
+        <PixelArtGem key="gem-1" color={isDark ? "#00f0ff" : "#0284c7"} />,
         <FramelessPixelRole
             key="role-2"
             title={isId ? "PENELITI AI" : "AI RESEARCHER"}
             isOutline={true}
-            color="#00ff66"
-            glowColor="rgba(0,255,102,0.6)"
+            color={isDark ? "#00ff66" : "#16a34a"}
+            glowColor={isDark ? "rgba(0,255,102,0.6)" : "rgba(22,163,74,0.3)"}
         />,
-        <PixelArtGem key="gem-2" color="#00ff66" />,
+        <PixelArtGem key="gem-2" color={isDark ? "#00ff66" : "#16a34a"} />,
         <FramelessPixelRole
             key="role-3"
             title="DATA ENGINEER"
-            gradient="linear-gradient(to right, #ffaa00, #fef08a, #ff6b00)"
-            color="#ffaa00"
-            glowColor="rgba(255,170,0,0.6)"
+            gradient={isDark ? "linear-gradient(to right, #ffaa00, #fef08a, #ff6b00)" : "linear-gradient(to right, #d97706, #b45309, #ea580c)"}
+            color={isDark ? "#ffaa00" : "#d97706"}
+            glowColor={isDark ? "rgba(255,170,0,0.6)" : "rgba(217,119,6,0.3)"}
         />,
-        <PixelArtGem key="gem-3" color="#ffaa00" />,
+        <PixelArtGem key="gem-3" color={isDark ? "#ffaa00" : "#d97706"} />,
         <FramelessPixelRole
             key="role-4"
             title="MLOPS ENGINEER"
             isOutline={true}
-            color="#c084fc"
-            glowColor="rgba(192,132,252,0.6)"
+            color={isDark ? "#c084fc" : "#9333ea"}
+            glowColor={isDark ? "rgba(192,132,252,0.6)" : "rgba(147,51,234,0.3)"}
         />,
-        <PixelArtGem key="gem-4" color="#c084fc" />,
+        <PixelArtGem key="gem-4" color={isDark ? "#c084fc" : "#9333ea"} />,
         <FramelessPixelRole
             key="role-5"
             title={isId ? "KOMPUTASI TERDISTRIBUSI" : "DISTRIBUTED COMPUTE"}
-            gradient="linear-gradient(to right, #38bdf8, #a5f3fc, #00f0ff)"
-            color="#38bdf8"
-            glowColor="rgba(56,189,248,0.6)"
+            gradient={isDark ? "linear-gradient(to right, #38bdf8, #a5f3fc, #00f0ff)" : "linear-gradient(to right, #0284c7, #38bdf8, #0369a1)"}
+            color={isDark ? "#38bdf8" : "#0284c7"}
+            glowColor={isDark ? "rgba(56,189,248,0.6)" : "rgba(2,132,199,0.3)"}
         />,
-        <PixelArtGem key="gem-5" color="#38bdf8" />,
+        <PixelArtGem key="gem-5" color={isDark ? "#38bdf8" : "#0284c7"} />,
         <FramelessPixelRole
             key="role-6"
             title="SOFTWARE ENGINEER"
             isOutline={true}
-            color="#f8fafc"
-            glowColor="rgba(255,255,255,0.5)"
+            color={isDark ? "#f8fafc" : "#334155"}
+            glowColor={isDark ? "rgba(255,255,255,0.5)" : "rgba(15,23,42,0.2)"}
         />,
-        <PixelArtGem key="gem-6" color="#00f0ff" />
+        <PixelArtGem key="gem-6" color={isDark ? "#00f0ff" : "#0284c7"} />
     ];
 
     return (
-        <div className="relative w-screen h-full flex flex-col items-center justify-center overflow-hidden bg-[#040814] cyber-scanlines">
+        <div className="relative w-screen h-full flex flex-col items-center justify-center overflow-hidden bg-background dark:bg-[#040814] cyber-scanlines">
             {/* Phase 0: The Lead-in UI */}
             <motion.div
                 style={{ opacity: phase0Opacity }}
@@ -232,10 +232,10 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                             }}
                             className="group flex items-center gap-2 cursor-pointer"
                         >
-                            <div className="relative px-10 py-5 rounded-full bg-[#050c1b] border-2 border-[#00f0ff]/40 group-hover:border-[#00f0ff] group-hover:bg-[#00f0ff] overflow-hidden transition-all duration-500 shadow-[0_0_25px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_40px_rgba(0,240,255,0.6)]">
+                            <div className="relative px-10 py-5 rounded-full bg-card dark:bg-[#050c1b] border-2 border-cyan-500/50 dark:border-[#00f0ff]/40 group-hover:border-[#00f0ff] group-hover:bg-[#00f0ff] overflow-hidden transition-all duration-500 shadow-[0_0_25px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_40px_rgba(0,240,255,0.6)]">
                                 <div className="relative z-10 h-7 overflow-hidden">
                                     <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-1/2">
-                                        <span className="text-white group-hover:text-black font-heading font-bold text-lg leading-7 transition-colors duration-500 uppercase tracking-wider">
+                                        <span className="text-slate-900 dark:text-white group-hover:text-black font-heading font-bold text-lg leading-7 transition-colors duration-500 uppercase tracking-wider">
                                             {isId ? "Tentang Saya" : "About Me"}
                                         </span>
                                         <span className="text-black font-heading font-bold text-lg leading-7 transition-colors duration-500 uppercase tracking-wider">
@@ -245,10 +245,10 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                                 </div>
                             </div>
 
-                            <div className="relative w-16 h-16 rounded-full bg-[#050c1b] border-2 border-[#00f0ff]/40 group-hover:border-[#00f0ff] group-hover:bg-[#00f0ff] overflow-hidden flex items-center justify-center transition-all duration-500 shadow-[0_0_25px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_40px_rgba(0,240,255,0.6)]">
+                            <div className="relative w-16 h-16 rounded-full bg-card dark:bg-[#050c1b] border-2 border-cyan-500/50 dark:border-[#00f0ff]/40 group-hover:border-[#00f0ff] group-hover:bg-[#00f0ff] overflow-hidden flex items-center justify-center transition-all duration-500 shadow-[0_0_25px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_40px_rgba(0,240,255,0.6)]">
                                 <div className="relative z-10 h-8 overflow-hidden">
                                     <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-1/2">
-                                        <ArrowUpRight className="w-8 h-8 text-[#00f0ff] group-hover:text-black transition-colors duration-500" />
+                                        <ArrowUpRight className="w-8 h-8 text-cyan-600 dark:text-[#00f0ff] group-hover:text-black transition-colors duration-500" />
                                         <ArrowUpRight className="w-8 h-8 text-black transition-colors duration-500" />
                                     </div>
                                 </div>
@@ -284,7 +284,7 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                     scale: cardScale,
                     y: cardY,
                     borderRadius: cardBorderRadius,
-                    backgroundColor: cardBgDark,
+                    backgroundColor: cardBg,
                     willChange: "transform, background-color",
                 }}
                 className="relative w-full h-full flex flex-col overflow-hidden origin-bottom z-10 border-t border-x border-[#00f0ff]/30 shadow-[0_-20px_50px_rgba(0,240,255,0.1)]"
@@ -324,9 +324,9 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                                 <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#00f0ff] z-20 shadow-[0_0_10px_#00f0ff]" />
 
                                 {/* Floating Corner HUD Telemetry */}
-                                <div className="absolute top-4 left-4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[#050c1b]/90 border border-[#00f0ff]/40 shadow-[0_0_12px_rgba(0,240,255,0.3)]">
+                                <div className="absolute top-4 left-4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 bg-card/90 dark:bg-[#050c1b]/90 border border-cyan-500/40 dark:border-[#00f0ff]/40 shadow-[0_0_12px_rgba(0,240,255,0.3)]">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#00ff66] animate-ping" />
-                                    <span className="font-pixel text-[8px] text-[#00f0ff] uppercase tracking-widest">
+                                    <span className="font-pixel text-[8px] text-cyan-700 dark:text-[#00f0ff] uppercase tracking-widest">
                                         SUBJECT: RAIHAN GHIFARI WINATA
                                     </span>
                                 </div>
@@ -368,28 +368,28 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <span className="w-2 h-2 bg-[#00ff66] shadow-[0_0_8px_#00ff66] animate-pulse" />
-                            <span className="font-pixel text-[8px] sm:text-[9px] text-[#00f0ff] tracking-widest uppercase">
+                            <span className="font-pixel text-[8px] sm:text-[9px] text-cyan-600 dark:text-[#00f0ff] tracking-widest uppercase">
                                 {isId ? "[ DIREKTIF ARSITEKTURAL UTAMA ]" : "[ CORE ARCHITECTURAL DIRECTIVE ]"}
                             </span>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
                             <div className="md:col-span-7">
-                                <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-black tracking-tight leading-snug text-white uppercase">
+                                <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-black tracking-tight leading-snug text-slate-900 dark:text-white uppercase">
                                     {isId ? (
                                         <>
-                                            Spesialisasi dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] via-teal-300 to-[#00ff66] font-heading font-black">deep RL kritis keselamatan</span>, komputasi terdistribusi, dan <span className="text-white font-black">sistem data kinerja tinggi</span>.
+                                            Spesialisasi dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 dark:from-[#00f0ff] via-teal-600 dark:via-teal-300 to-emerald-600 dark:to-[#00ff66] font-heading font-black">deep RL kritis keselamatan</span>, komputasi terdistribusi, dan <span className="text-slate-900 dark:text-white font-black">sistem data kinerja tinggi</span>.
                                         </>
                                     ) : (
                                         <>
-                                            Specializing in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] via-teal-300 to-[#00ff66] font-heading font-black">safety-critical deep RL</span>, distributed compute, and <span className="text-white font-black">high-throughput data systems</span>.
+                                            Specializing in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 dark:from-[#00f0ff] via-teal-600 dark:via-teal-300 to-emerald-600 dark:to-[#00ff66] font-heading font-black">safety-critical deep RL</span>, distributed compute, and <span className="text-slate-900 dark:text-white font-black">high-throughput data systems</span>.
                                         </>
                                     )}
                                 </h3>
                             </div>
 
                             <div className="md:col-span-5 pt-1">
-                                <p className="font-mono text-sm md:text-base text-zinc-400 leading-relaxed font-normal">
+                                <p className="font-mono text-sm md:text-base text-slate-600 dark:text-zinc-400 leading-relaxed font-normal">
                                     <BlurInUpText 
                                         text={
                                             isId
@@ -409,8 +409,8 @@ export const IdentitySequence = ({ scrollYProgress }: IdentitySequenceProps) => 
                         className="w-full max-w-[1700px] mx-auto py-20 flex flex-col gap-8 flex-shrink-0"
                     >
                         <div className="px-8 md:px-16 lg:px-24 mb-6">
-                            <h4 className="font-pixel text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-[#00f0ff] flex items-center gap-2">
-                                <span className="inline-block w-2.5 h-2.5 bg-[#00f0ff] shadow-[0_0_8px_#00ff66]" />
+                            <h4 className="font-pixel text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-cyan-600 dark:text-[#00f0ff] flex items-center gap-2">
+                                <span className="inline-block w-2.5 h-2.5 bg-cyan-500 dark:bg-[#00f0ff] shadow-[0_0_8px_#00ff66]" />
                                 <span>{isId ? "[ STACK TEKNOLOGI & EKOSISTEM TERDISTRIBUSI ]" : "[ TECH STACK & DISTRIBUTED ECOSYSTEM ]"}</span>
                             </h4>
                         </div>

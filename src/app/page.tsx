@@ -103,7 +103,7 @@ export default function HomePage() {
                     ease: skipAnimation ? "linear" : [0.16, 1, 0.3, 1],
                     opacity: { duration: skipAnimation ? 0 : 0.8 }
                 }}
-                className="relative overflow-x-clip will-change-transform will-change-opacity bg-[#030712]"
+                className="relative overflow-x-clip will-change-transform will-change-opacity bg-background dark:bg-[#030712]"
             >
                 <HeroVisual isExiting={isReadyToAnimate} />
 

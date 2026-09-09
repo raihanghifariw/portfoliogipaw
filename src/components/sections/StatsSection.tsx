@@ -68,14 +68,14 @@ export default function StatsSection({ showOnly }: { scrollYProgress?: any; show
     );
 
     return (
-        <section className="relative z-20 bg-[#02040a] overflow-visible flex flex-col items-center transition-colors duration-500">
+        <section className="relative z-20 bg-background dark:bg-[#02040a] text-foreground dark:text-white overflow-visible flex flex-col items-center transition-colors duration-500">
             {/* Header for the Gallery Section */}
             {(showOnly === "top" || !showOnly) && (
                 <>
                     <div className="max-w-6xl mx-auto px-6 w-full pt-32 pb-16 text-center space-y-5">
                         {/* Eyebrow Directive */}
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-cyan-950/70 border border-cyan-500/40 rounded-md text-cyan-400 font-pixel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(0,240,255,0.25)]">
-                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-cyan-500/10 dark:bg-cyan-950/70 border border-cyan-500/40 rounded-md text-cyan-600 dark:text-cyan-400 font-pixel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(0,240,255,0.15)]">
+                            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
                             <span>{isId ? "RISET & ARSIP" : "RESEARCH & ARCHIVE"}</span>
                         </div>
 
@@ -83,10 +83,10 @@ export default function StatsSection({ showOnly }: { scrollYProgress?: any; show
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tight text-white uppercase drop-shadow-[0_0_35px_rgba(0,0,0,0.8)]"
+                            className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tight text-slate-900 dark:text-white uppercase drop-shadow-[0_0_35px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_0_35px_rgba(0,0,0,0.8)]"
                         >
                             JOURNAL &amp;{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 drop-shadow-[0_0_30px_rgba(0,240,255,0.35)]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 dark:from-cyan-400 via-teal-600 dark:via-emerald-400 to-cyan-500 dark:to-cyan-300 drop-shadow-[0_0_30px_rgba(0,240,255,0.35)]">
                                 {isId ? "INSIGHT" : "INSIGHTS"}
                             </span>
                         </motion.h2>
@@ -95,7 +95,7 @@ export default function StatsSection({ showOnly }: { scrollYProgress?: any; show
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-slate-300 font-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+                            className="text-slate-600 dark:text-slate-300 font-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
                         >
                             {isId 
                                 ? "Cetak biru riset pilihan, investigasi reinforcement learning klinis, dan telemetri sistem terdistribusi produksi."
@@ -107,7 +107,7 @@ export default function StatsSection({ showOnly }: { scrollYProgress?: any; show
                         <ZoomParallax images={images}>
                             <Link 
                                 href="/projects" 
-                                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#06152b] text-cyan-300 border border-cyan-500/60 rounded-full font-mono font-bold uppercase tracking-widest text-xs hover:bg-cyan-400 hover:text-black hover:border-cyan-300 hover:scale-105 active:scale-95 transition-all shadow-[0_0_25px_rgba(0,240,255,0.3)]"
+                                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-card dark:bg-[#06152b] text-cyan-600 dark:text-cyan-300 border border-slate-300 dark:border-cyan-500/60 rounded-full font-mono font-bold uppercase tracking-widest text-xs hover:bg-cyan-500 hover:text-black hover:border-cyan-400 hover:scale-105 active:scale-95 transition-all shadow-[0_0_25px_rgba(0,240,255,0.2)]"
                             >
                                 <span>{isId ? "Lihat Karya Unggulan" : "View Flagship Work"}</span>
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

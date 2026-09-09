@@ -38,7 +38,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between bg-[#030712] text-white overflow-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
+    <section className="relative min-h-screen w-full flex flex-col justify-between bg-background dark:bg-[#030712] text-foreground dark:text-white overflow-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* 1. Cyber Ambient Atmosphere */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-purple-600/15 rounded-full blur-[160px] pointer-events-none -z-10" />
@@ -86,7 +86,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
               size="pixel-xs"
               accent="purple"
             />
-            <span className="hidden sm:inline-flex items-center px-3 py-1 bg-zinc-950 border border-cyan-500/30 text-cyan-300 font-heading text-xs tracking-wider uppercase">
+            <span className="hidden sm:inline-flex items-center px-3 py-1 bg-card dark:bg-zinc-950 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300 font-heading text-xs tracking-wider uppercase shadow-sm">
               {t("hero.badgeRole", "AI, Data, & Software Engineer & Researcher")}
             </span>
           </div>
@@ -94,8 +94,8 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
           {/* Interactive 3D Pixel Headline */}
           <div className="space-y-4">
             <div className="flex flex-col gap-2.5 items-start">
-              <span className="font-heading text-xs sm:text-sm text-cyan-400 tracking-[0.25em] uppercase flex items-center gap-2">
-                <span className="inline-block w-2 h-2 bg-cyan-400 animate-ping" />
+              <span className="font-heading text-xs sm:text-sm text-cyan-600 dark:text-cyan-400 tracking-[0.25em] uppercase flex items-center gap-2">
+                <span className="inline-block w-2 h-2 bg-cyan-500 animate-ping" />
                 {t("hero.eyebrow", "AUTONOMOUS INTELLIGENCE SYSTEMS")}
               </span>
 
@@ -104,7 +104,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
                 size="pixel-4xl"
                 accent="cyan"
                 glow={true}
-                className="text-white text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
+                className="text-slate-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
               >
                 {t("hero.headline.1", "ARCHITECTING")}
               </Interactive3DPixelTypography>
@@ -114,7 +114,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
                 size="pixel-4xl"
                 accent="cyan"
                 glow={true}
-                className="text-cyan-400 text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
+                className="text-cyan-600 dark:text-cyan-400 text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
               >
                 {t("hero.headline.2", "AUTONOMOUS AI")}
               </Interactive3DPixelTypography>
@@ -124,13 +124,13 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
                 size="pixel-4xl"
                 accent="white"
                 glow={true}
-                className="text-white text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
+                className="text-slate-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[30px] lg:leading-[60px] xl:text-[32px] xl:leading-[64px]"
               >
                 {t("hero.headline.3", "& DISTRIBUTED SYSTEMS")}
               </Interactive3DPixelTypography>
             </div>
 
-            <p className="font-body text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl pt-2 font-normal">
+            <p className="font-body text-base sm:text-lg text-slate-600 dark:text-zinc-300 leading-relaxed max-w-2xl pt-2 font-normal">
               {t(
                 "hero.subtitle",
                 "Engineering high-performance neural architectures across Generative Agents, Real-Time Computer Vision, continuous-action Deep Reinforcement Learning, and distributed GPU pipelines designed for scale."
@@ -142,7 +142,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
           <div className="flex flex-wrap items-center gap-4 pt-4 font-display pixel-sm">
             <button
               onClick={handleScrollToSystems}
-              className="px-6 py-3.5 bg-cyan-400 hover:bg-cyan-300 text-black font-bold uppercase tracking-wider border-2 border-white shadow-[4px_4px_0px_#fff] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 bg-cyan-400 hover:bg-cyan-300 text-black font-bold uppercase tracking-wider border-2 border-slate-900 dark:border-white shadow-[4px_4px_0px_#0f172a] dark:shadow-[4px_4px_0px_#fff] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2 cursor-pointer"
             >
               <span>&gt; {t("hero.btnExplore", "EXPLORE_SYSTEMS")}</span>
               <ArrowRight className="w-4 h-4 text-black" />
@@ -150,17 +150,17 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
 
             <button
               onClick={handleOpenChat}
-              className="px-6 py-3.5 bg-black hover:bg-cyan-950/60 text-cyan-400 font-bold uppercase tracking-wider border-2 border-cyan-400 shadow-[4px_4px_0px_#00f0ff] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 bg-card dark:bg-black hover:bg-cyan-50 dark:hover:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400 font-bold uppercase tracking-wider border-2 border-cyan-500 dark:border-cyan-400 shadow-[4px_4px_0px_#06b6d4] dark:shadow-[4px_4px_0px_#00f0ff] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2 cursor-pointer"
             >
-              <Bot className="w-4 h-4 text-cyan-400" />
+              <Bot className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>{t("hero.btnEve", "TALK_TO_EVE")}</span>
             </button>
 
             <Link
               href="/resume"
-              className="px-5 py-3.5 bg-black hover:bg-zinc-900 text-zinc-300 hover:text-white font-bold uppercase tracking-wider border-2 border-zinc-600 shadow-[4px_4px_0px_#64748b] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2"
+              className="px-5 py-3.5 bg-card dark:bg-black hover:bg-slate-100 dark:hover:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white font-bold uppercase tracking-wider border-2 border-slate-300 dark:border-zinc-600 shadow-[4px_4px_0px_#94a3b8] dark:shadow-[4px_4px_0px_#64748b] active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px] transition-all flex items-center gap-2"
             >
-              <FileText className="w-4 h-4 text-zinc-400" />
+              <FileText className="w-4 h-4 text-slate-500 dark:text-zinc-400" />
               <span>{t("hero.btnCredentials", "CREDENTIALS")}</span>
             </Link>
           </div>
@@ -174,7 +174,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
           className="lg:col-span-5 relative w-full flex flex-col items-center justify-center min-h-[460px] md:min-h-[580px]"
         >
           {/* Retro Pixel CRT Monitor Frame */}
-          <div className="absolute inset-0 bg-black/90 border-4 border-cyan-500/60 shadow-[8px_8px_0px_rgba(0,240,255,0.35)] pointer-events-none" />
+          <div className="absolute inset-0 bg-slate-900/90 dark:bg-black/90 border-4 border-cyan-500/60 shadow-[8px_8px_0px_rgba(0,240,255,0.35)] pointer-events-none" />
 
           {/* Pixel Top Header Telemetry */}
           <div className="absolute top-4 left-6 right-6 flex items-center justify-between z-20 pointer-events-none font-display pixel-xs">
@@ -197,23 +197,23 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="absolute bottom-4 left-4 right-4 z-20 p-4 bg-black/95 border-2 border-cyan-400 shadow-[4px_4px_0px_#00f0ff] flex items-start gap-3 pointer-events-auto cursor-pointer group"
+            className="absolute bottom-4 left-4 right-4 z-20 p-4 bg-card/95 dark:bg-black/95 border-2 border-cyan-600 dark:border-cyan-400 shadow-[4px_4px_0px_#06b6d4] dark:shadow-[4px_4px_0px_#00f0ff] flex items-start gap-3 pointer-events-auto cursor-pointer group"
             onClick={handleOpenChat}
             title="Click to start chatting with EVE"
           >
-            <div className="w-8 h-8 bg-cyan-950 border border-cyan-400 flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#00f0ff]">
-              <Bot className="w-4 h-4 text-cyan-300" />
+            <div className="w-8 h-8 bg-cyan-100 dark:bg-cyan-950 border border-cyan-500 dark:border-cyan-400 flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#00f0ff]">
+              <Bot className="w-4 h-4 text-cyan-700 dark:text-cyan-300" />
             </div>
             <div className="flex-1 space-y-1">
               <div className="flex items-center justify-between font-display pixel-xs">
-                <span className="text-cyan-400 tracking-wider">
+                <span className="text-cyan-700 dark:text-cyan-400 tracking-wider">
                   {t("hero.eveCopilot", "EVE NAVIGATION CO-PILOT")}
                 </span>
-                <span className="text-zinc-400 group-hover:text-cyan-300 transition-colors flex items-center gap-1 font-heading text-xs">
+                <span className="text-slate-500 dark:text-zinc-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors flex items-center gap-1 font-heading text-xs">
                   {t("hero.chatTrigger", "CHAT ↗")} <ArrowUpRight className="w-3 h-3" />
                 </span>
               </div>
-              <p className="font-heading text-xs sm:text-sm text-cyan-200 leading-relaxed tracking-wide">
+              <p className="font-heading text-xs sm:text-sm text-cyan-900 dark:text-cyan-200 leading-relaxed tracking-wide">
                 {t("hero.eveBubble", "> HI! I AM EVE, RAIHAN'S RESEARCH CO-PILOT. EXPLORE HIS PRODUCTION WORKFLOWS IN GEN AI, COMPUTER VISION, DEEP RL, & DISTRIBUTED SYSTEMS.")}
               </p>
             </div>

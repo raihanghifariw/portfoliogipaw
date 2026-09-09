@@ -206,7 +206,7 @@ const AboutLeadIn = () => {
                         transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } 
                     }
                 }}
-                className="relative w-full bg-zinc-950/90 border border-cyan-500/30 p-6 md:p-12 lg:p-16 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(0,240,255,0.08)] backdrop-blur-2xl transition-all duration-500 group"
+                className="relative w-full bg-card/95 dark:bg-zinc-950/90 border border-cyan-500/30 p-6 md:p-12 lg:p-16 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(0,240,255,0.08)] backdrop-blur-2xl transition-all duration-500 group"
             >
                 {/* 1. Tron Grid Texture */}
                 <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00f0ff10_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40" />
@@ -233,18 +233,18 @@ const AboutLeadIn = () => {
                 {/* 4. Content Layer */}
                 <div className="relative z-10">
                     <div className="flex justify-between items-start mb-6 md:mb-10">
-                        <span className="text-cyan-400 text-[10px] md:text-xs font-mono font-bold uppercase tracking-[0.25em] bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded">
+                        <span className="text-cyan-700 dark:text-cyan-400 text-[10px] md:text-xs font-mono font-bold uppercase tracking-[0.25em] bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded">
                             {isId ? "[BABAK 01 • MANIFESTO ARSITEKTURAL]" : "[ACT 01 • ARCHITECTURAL MANIFESTO]"}
                         </span>
-                        <span className="text-zinc-400 text-[9px] font-mono tracking-widest uppercase hidden md:block">
+                        <span className="text-slate-500 dark:text-zinc-400 text-[9px] font-mono tracking-widest uppercase hidden md:block">
                             {isId ? "AI, DATA & PENELITI SISTEM" : "AI, DATA & SOFTWARE ENGINEER & RESEARCHER"}
                         </span>
                     </div>
 
                     <div className="mb-8 md:mb-14 relative cursor-default">
-                        <h2 className="text-[32px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[80px] font-black tracking-tight leading-[0.96] text-white transition-all duration-700 group-hover:drop-shadow-[0_0_25px_rgba(0,240,255,0.25)]">
+                        <h2 className="text-[32px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[80px] font-black tracking-tight leading-[0.96] text-slate-900 dark:text-white transition-all duration-700 group-hover:drop-shadow-[0_0_25px_rgba(0,240,255,0.25)]">
                             {isId ? "Kecerdasan Otonom." : "Autonomous Intelligence."} <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 dark:from-cyan-400 via-teal-500 dark:via-teal-300 to-emerald-500 dark:to-emerald-400">
                                 {isId ? "Infrastruktur Data Kinerja Tinggi." : "High-Throughput Data Infrastructure."}
                             </span>
                         </h2>
@@ -252,36 +252,36 @@ const AboutLeadIn = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 border-t border-cyan-500/20 pt-8 md:pt-12">
                         <div className="md:col-span-5">
-                            <p className="text-base md:text-lg lg:text-xl font-normal text-zinc-300 leading-relaxed tracking-tight">
+                            <p className="text-base md:text-lg lg:text-xl font-normal text-slate-600 dark:text-zinc-300 leading-relaxed tracking-tight">
                                 {isId ? (
-                                    <>Menjembatani formulasi matematika dan sistem produksi pada <strong className="text-white font-semibold">Agen Generatif</strong>, <strong className="text-white font-semibold">Computer Vision Real-Time</strong>, dan <strong className="text-white font-semibold">Deep Reinforcement Learning</strong> kontinu.</>
+                                    <>Menjembatani formulasi matematika dan sistem produksi pada <strong className="text-slate-900 dark:text-white font-semibold">Agen Generatif</strong>, <strong className="text-slate-900 dark:text-white font-semibold">Computer Vision Real-Time</strong>, dan <strong className="text-slate-900 dark:text-white font-semibold">Deep Reinforcement Learning</strong> kontinu.</>
                                 ) : (
-                                    <>Bridging mathematical formulation and production systems across <strong className="text-white font-semibold">Generative Agents</strong>, <strong className="text-white font-semibold">Real-Time Computer Vision</strong>, and continuous <strong className="text-white font-semibold">Deep Reinforcement Learning</strong>.</>
+                                    <>Bridging mathematical formulation and production systems across <strong className="text-slate-900 dark:text-white font-semibold">Generative Agents</strong>, <strong className="text-slate-900 dark:text-white font-semibold">Real-Time Computer Vision</strong>, and continuous <strong className="text-slate-900 dark:text-white font-semibold">Deep Reinforcement Learning</strong>.</>
                                 )}
                             </p>
                         </div>
 
                         <div className="md:col-span-7 flex flex-col sm:flex-row gap-8 text-[13px]">
                             <div className="flex-1 space-y-3">
-                                <span className="text-cyan-300 font-mono font-bold uppercase tracking-widest block border-b border-cyan-500/20 pb-3">
+                                <span className="text-cyan-700 dark:text-cyan-300 font-mono font-bold uppercase tracking-widest block border-b border-cyan-500/20 pb-3">
                                     {isId ? "Sistem & Paradigma" : "Systems & Paradigms"}
                                 </span>
-                                <p className="text-zinc-400 leading-relaxed font-sans">
+                                <p className="text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
                                     {isId ? "Graf penalaran multi-agen, triase edge VLM sub-50ms, dan ensemble kebijakan SAC/TD3 kontinu dengan batasan keselamatan Lagrangian adaptif." : "Multi-agent reasoning graphs, sub-50ms edge VLM triage, and continuous SAC/TD3 policy ensembles with adaptive Lagrangian safety bounds."}
                                 </p>
-                                <p className="text-cyan-400/90 font-mono text-xs tracking-wider">
+                                <p className="text-cyan-700 dark:text-cyan-400/90 font-mono text-xs tracking-wider">
                                     {isId ? "Direkayasa untuk skala deterministik." : "Engineered for deterministic scale."}
                                 </p>
                             </div>
                             <div className="flex-1 space-y-3 flex flex-col">
-                                <span className="text-cyan-300 font-mono font-bold uppercase tracking-widest block border-b border-cyan-500/20 pb-3">
+                                <span className="text-cyan-700 dark:text-cyan-300 font-mono font-bold uppercase tracking-widest block border-b border-cyan-500/20 pb-3">
                                     {isId ? "Pipeline Terdistribusi" : "Distributed Pipeline"}
                                 </span>
-                                <p className="text-zinc-400 leading-relaxed font-sans">
+                                <p className="text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
                                     {isId ? "Worker pelatihan terparalelisasi CUDA, microservice Docker kontainer, pencarian vektor hibrida Qdrant, dan arsitektur FastAPI latensi mikro." : "CUDA-parallelized training workers, containerized Docker microservices, Qdrant hybrid vector search, and micro-latency FastAPI architectures."}
                                 </p>
                                 <div className="mt-6 md:mt-auto pt-4">
-                                    <span className="text-2xl lg:text-3xl font-serif italic text-white/90">
+                                    <span className="text-2xl lg:text-3xl font-serif italic text-slate-900 dark:text-white/90">
                                         Raihan Ghifari Winata
                                     </span>
                                 </div>
@@ -424,7 +424,7 @@ const AuditFunnel = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="relative overflow-visible group min-h-[80vh] md:min-h-[120vh] flex items-center justify-center bg-[#02040a] z-10 pb-10 md:pb-32 border-t border-cyan-500/20">
+        <div ref={sectionRef} className="relative overflow-visible group min-h-[80vh] md:min-h-[120vh] flex items-center justify-center bg-background dark:bg-[#02040a] z-10 pb-10 md:pb-32 border-t border-cyan-500/20">
             {/* Tron Ambient Grid & Laser Halo */}
             <div className="absolute inset-0 bg-[radial-gradient(circle,_#00f0ff0f_1px,_transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-50" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none -z-10" />
@@ -435,24 +435,24 @@ const AuditFunnel = () => {
                     className="space-y-4 md:space-y-6 flex flex-col items-center px-6 relative z-10 w-full"
                 >
                     {/* Eyebrow Directive */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-cyan-950/70 border border-cyan-500/40 rounded-md text-cyan-400 font-pixel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(0,240,255,0.25)]">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/40 rounded-md text-cyan-700 dark:text-cyan-400 font-pixel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(0,240,255,0.25)]">
+                        <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-ping" />
                         <span>{isId ? "KHAZANAH KONVERGENSI INTI" : "CORE CONVERGENCE VAULT"}</span>
                     </div>
 
                     {/* Headline */}
                     <motion.h4
                         style={{ scale, willChange: "transform" }}
-                        className="text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-heading font-black tracking-tight text-white max-w-7xl leading-[0.92] lg:px-6 uppercase text-center drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]"
+                        className="text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-heading font-black tracking-tight text-slate-900 dark:text-white max-w-7xl leading-[0.92] lg:px-6 uppercase text-center drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]"
                     >
                         {isId ? "KONVERGENSI" : "CONVERGING"} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 drop-shadow-[0_0_35px_rgba(0,240,255,0.35)]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 dark:from-cyan-400 via-emerald-500 dark:via-emerald-400 to-cyan-400 dark:to-cyan-300 drop-shadow-[0_0_35px_rgba(0,240,255,0.35)]">
                             {isId ? "ALGORITMA & SISTEM" : "ALGORITHMS & SYSTEMS"}
                         </span>
                     </motion.h4>
 
                     {/* Subtitle */}
-                    <p className="font-body text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mt-2">
+                    <p className="font-body text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mt-2">
                         {isId
                             ? "Titik temu jaminan kontrol matematis dengan eksekusi neural terdistribusi real-time."
                             : "Where mathematical control guarantees converge with real-time distributed neural execution."}
@@ -524,7 +524,7 @@ export default function AboutSection() {
                     </div>
 
                 {/* Seamless solid background section overlapping the slider's dead space */}
-                <div className="-mt-[50vh] flex flex-col items-center w-full bg-[#05070f] relative z-20">
+                <div className="-mt-[50vh] flex flex-col items-center w-full bg-background dark:bg-[#05070f] relative z-20">
                     <div className="w-full">
                         <HorizontalTimeline
                             data={showcaseMembers.map((member) => ({
@@ -537,29 +537,29 @@ export default function AboutSection() {
                                         href={member.link || '/experience'}
                                         className="relative flex items-center h-[120px] w-[260px] z-30 group/link"
                                     >
-                                        <div className="relative w-full flex items-center gap-3.5 px-5 py-4 bg-[#070b16]/95 border border-cyan-500/50 rounded-xl backdrop-blur-xl shadow-[0_0_25px_rgba(0,240,255,0.25)] group-hover/link:border-cyan-300 group-hover/link:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-500 overflow-hidden">
+                                        <div className="relative w-full flex items-center gap-3.5 px-5 py-4 bg-card/95 dark:bg-[#070b16]/95 border border-cyan-500/50 rounded-xl backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_0_25px_rgba(0,240,255,0.25)] group-hover/link:border-cyan-500 group-hover/link:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all duration-500 overflow-hidden">
                                             {/* Corner tabs */}
                                             <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-cyan-400" />
                                             <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-cyan-400" />
                                             <div className="absolute bottom-0 left-0 w-1.5 h-1.5 bg-cyan-400" />
                                             <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-cyan-400" />
 
-                                            <div className="w-10 h-10 rounded-full bg-cyan-950/90 border border-cyan-400/60 shadow-[0_0_12px_rgba(0,240,255,0.4)] flex items-center justify-center shrink-0 transition-all duration-500 group-hover/link:scale-110 group-hover/link:bg-cyan-400 group-hover/link:text-black">
-                                                <ArrowUpRight className="w-5 h-5 text-cyan-300 group-hover/link:text-black group-hover/link:rotate-45 transition-all duration-500" />
+                                            <div className="w-10 h-10 rounded-full bg-cyan-100 dark:bg-cyan-950/90 border border-cyan-500 dark:border-cyan-400/60 shadow-[0_0_12px_rgba(0,240,255,0.4)] flex items-center justify-center shrink-0 transition-all duration-500 group-hover/link:scale-110 group-hover/link:bg-cyan-400 group-hover/link:text-black">
+                                                <ArrowUpRight className="w-5 h-5 text-cyan-700 dark:text-cyan-300 group-hover/link:text-black group-hover/link:rotate-45 transition-all duration-500" />
                                             </div>
                                             <div className="flex flex-col min-w-0">
-                                                <span className="text-[9px] font-mono text-cyan-400 uppercase tracking-widest">{isId ? "[DIREKTORI]" : "[DIRECTORY]"}</span>
-                                                <span className="text-sm font-bold font-heading text-white group-hover/link:text-cyan-300 transition-colors truncate">
+                                                <span className="text-[9px] font-mono text-cyan-700 dark:text-cyan-400 uppercase tracking-widest">{isId ? "[DIREKTORI]" : "[DIRECTORY]"}</span>
+                                                <span className="text-sm font-bold font-heading text-slate-900 dark:text-white group-hover/link:text-cyan-600 dark:group-hover/link:text-cyan-300 transition-colors truncate">
                                                     {isId ? "Jelajahi Semua" : "Explore All"}
                                                 </span>
-                                                <span className="text-[10px] text-slate-400 font-sans truncate">
+                                                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-sans truncate">
                                                     {isId ? "Arsip 6+ Posisi" : "6+ Roles Archive"}
                                                 </span>
                                             </div>
                                         </div>
                                     </Link>
                                 ) : (
-                                    <div className="w-[450px] md:w-[500px] h-[210px] md:h-[220px] bg-[#070b16]/95 border border-cyan-500/40 backdrop-blur-2xl rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.95),0_0_25px_rgba(0,240,255,0.15)] flex overflow-hidden group/card transition-all duration-500 hover:border-cyan-400 relative">
+                                    <div className="w-[450px] md:w-[500px] h-[210px] md:h-[220px] bg-card/95 dark:bg-[#070b16]/95 border border-cyan-500/40 backdrop-blur-2xl rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.95),0_0_25px_rgba(0,240,255,0.15)] flex overflow-hidden group/card transition-all duration-500 hover:border-cyan-400 relative">
                                         {/* Tron Cyan Pixel Corner Tabs */}
                                         <div className="absolute top-0 left-0 w-2 h-2 bg-cyan-400 -translate-x-0.5 -translate-y-0.5 z-20" />
                                         <div className="absolute top-0 right-0 w-2 h-2 bg-cyan-400 translate-x-0.5 -translate-y-0.5 z-20" />
@@ -577,7 +577,7 @@ export default function AboutSection() {
                                                 className="w-full h-full object-cover opacity-85 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-500"
                                             />
                                             {member.link && (
-                                                <div className="absolute inset-0 bg-[#05070f]/85 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2 backdrop-blur-xs">
+                                                <div className="absolute inset-0 bg-slate-900/85 dark:bg-[#05070f]/85 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2 backdrop-blur-xs">
                                                     <Link
                                                         href={member.link}
                                                         target="_blank"
@@ -594,26 +594,26 @@ export default function AboutSection() {
                                         <div className="relative z-10 flex-1 p-3.5 md:p-4 flex flex-col justify-between overflow-hidden">
                                             {/* Top Row: Status Badge + Node */}
                                             <div className="flex items-center justify-between gap-1.5">
-                                                <span className="text-[8.5px] md:text-[9px] font-mono font-bold tracking-wider text-cyan-400 bg-cyan-950/80 border border-cyan-500/40 px-2 py-0.5 rounded truncate max-w-[75%] shadow-[0_0_8px_rgba(0,240,255,0.15)]">
+                                                <span className="text-[8.5px] md:text-[9px] font-mono font-bold tracking-wider text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 px-2 py-0.5 rounded truncate max-w-[75%] shadow-[0_0_8px_rgba(0,240,255,0.15)]">
                                                     [{member.statusBadge}]
                                                 </span>
-                                                <span className="text-[9px] font-mono text-slate-400 shrink-0">
+                                                <span className="text-[9px] font-mono text-slate-500 dark:text-slate-400 shrink-0">
                                                     NODE {member.node}
                                                 </span>
                                             </div>
 
                                             {/* Title & Role */}
                                             <div className="mt-1">
-                                                <h4 className="text-xs md:text-sm font-bold font-heading text-white leading-tight truncate drop-shadow-[0_0_8px_rgba(0,240,255,0.2)]">
+                                                <h4 className="text-xs md:text-sm font-bold font-heading text-slate-900 dark:text-white leading-tight truncate drop-shadow-[0_0_8px_rgba(0,240,255,0.2)]">
                                                     {member.organization}
                                                 </h4>
-                                                <p className="text-[11px] md:text-xs font-mono text-cyan-300 truncate mt-0.5">
+                                                <p className="text-[11px] md:text-xs font-mono text-cyan-700 dark:text-cyan-300 truncate mt-0.5">
                                                     {member.role}
                                                 </p>
                                             </div>
 
                                             {/* Description (max 3 compact lines) */}
-                                            <p className="text-[10px] md:text-[11px] text-slate-300 leading-snug line-clamp-3 mt-1">
+                                            <p className="text-[10px] md:text-[11px] text-slate-600 dark:text-slate-300 leading-snug line-clamp-3 mt-1">
                                                 {member.description}
                                             </p>
 
@@ -623,7 +623,7 @@ export default function AboutSection() {
                                                     {member.skills.slice(0, 3).map((skill, sIdx) => (
                                                         <span
                                                             key={sIdx}
-                                                            className="text-[8.5px] md:text-[9px] font-mono px-1.5 py-0.5 bg-[#0b1222] text-cyan-300/90 border border-cyan-800/40 rounded truncate max-w-[120px]"
+                                                            className="text-[8.5px] md:text-[9px] font-mono px-1.5 py-0.5 bg-slate-100 dark:bg-[#0b1222] text-cyan-800 dark:text-cyan-300/90 border border-cyan-500/30 dark:border-cyan-800/40 rounded truncate max-w-[120px]"
                                                         >
                                                             {skill}
                                                         </span>

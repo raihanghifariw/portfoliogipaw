@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import * as React from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
@@ -241,7 +241,7 @@ function Interactive3DViewport({
 }
 
 export function ArgentLoopInfiniteSlider() {
-  const { language } = usePortfolio();
+  const { language, isDark } = usePortfolio();
   const projectData = language === "id" ? PROJECT_DATA_ID : PROJECT_DATA_EN;
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = React.useState(0);
@@ -325,8 +325,6 @@ export function ArgentLoopInfiniteSlider() {
         }
         .custom-btn-arrow,
         .custom-btn-github {
-          background: #040814;
-          color: #00f0ff;
           border: 1px solid rgba(0, 240, 255, 0.6);
           width: 50px;
           height: 50px;
@@ -346,13 +344,15 @@ export function ArgentLoopInfiniteSlider() {
       `}</style>
 
       {/* Sticky Fullscreen Wrapper */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#02040a] z-20 flex items-center justify-center">
+      <div className="sticky top-0 w-full h-screen overflow-hidden bg-background dark:bg-[#02040a] z-20 flex items-center justify-center">
         {/* Ambient Blurred Project Background Synchronized with Active Slide */}
         <motion.div style={{ opacity: bgOpacity }} className="absolute inset-0 pointer-events-none">
           <div 
             className="absolute inset-0 z-10" 
             style={{
-              background: "radial-gradient(circle at center, rgba(4, 8, 20, 0.45) 10%, #02040a 92%)"
+              background: isDark
+                ? "radial-gradient(circle at center, rgba(4, 8, 20, 0.45) 10%, #02040a 92%)"
+                : "radial-gradient(circle at center, rgba(240, 245, 255, 0.6) 10%, #f8fafc 92%)"
             }} 
           />
           <AnimatePresence mode="wait">
@@ -383,7 +383,7 @@ export function ArgentLoopInfiniteSlider() {
           className="relative z-30 w-[94vw] max-w-[1360px] flex flex-col items-center pointer-events-auto px-2"
         >
           {/* Cyberdeck Outer Glass Frame */}
-          <div className="relative w-full rounded-md bg-[#040814]/92 backdrop-blur-2xl border border-cyan-500/40 shadow-[0_0_60px_-10px_rgba(0,240,255,0.25),inset_0_0_30px_rgba(0,240,255,0.04),0_30px_80px_rgba(0,0,0,0.9)] overflow-hidden">
+          <div className="relative w-full rounded-md bg-card/95 dark:bg-[#040814]/92 backdrop-blur-2xl border border-cyan-500/40 shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_0_60px_-10px_rgba(0,240,255,0.25),inset_0_0_30px_rgba(0,240,255,0.04),0_30px_80px_rgba(0,0,0,0.9)] overflow-hidden">
             {/* Stepped Pixel Corner Accents */}
             <div className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-cyan-400 pointer-events-none z-30 shadow-[0_0_8px_#00f0ff]" />
             <div className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-cyan-400 pointer-events-none z-30 shadow-[0_0_8px_#00f0ff]" />
@@ -403,7 +403,7 @@ export function ArgentLoopInfiniteSlider() {
                     <span className="w-2 h-2 rounded-full bg-amber-500/80 shadow-[0_0_6px_rgba(245,158,11,0.6)]" />
                     <span className="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_6px_rgba(16,185,129,0.6)]" />
                   </div>
-                  <span className="font-pixel text-[9px] sm:text-[11px] text-cyan-400/90 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">
+                  <span className="font-pixel text-[9px] sm:text-[11px] text-cyan-600 dark:text-cyan-400/90 tracking-widest uppercase drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">
                     {language === "id" ? "KONSOL SISTEM : ARSITEKTUR UTAMA" : "SYSTEM CONSOLE : CORE ARCHITECTURES"}
                   </span>
                 </div>
@@ -419,7 +419,7 @@ export function ArgentLoopInfiniteSlider() {
                         className={`px-2.5 py-1 text-[10px] sm:text-xs font-mono font-bold rounded transition-all duration-300 ${
                           isCurrent
                             ? "bg-cyan-400 text-black shadow-[0_0_15px_rgba(0,240,255,0.8)] scale-105"
-                            : "bg-[#061022] text-cyan-400/60 border border-cyan-500/20 hover:border-cyan-400/60 hover:text-cyan-200"
+                            : "bg-slate-100 dark:bg-[#061022] text-slate-700 dark:text-cyan-400/60 border border-slate-300 dark:border-cyan-500/20 hover:border-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-200"
                         }`}
                         title={p.title}
                       >
@@ -446,25 +446,25 @@ export function ArgentLoopInfiniteSlider() {
                       {/* Domain Tag & Timeline Badge */}
                       <div className="flex flex-wrap items-center gap-2.5">
                         <div className="flex items-center gap-2">
-                          <span className="font-pixel text-cyan-400 text-xs sm:text-sm tracking-widest drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">
+                          <span className="font-pixel text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm tracking-widest drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">
                             {num} .
                           </span>
-                          <span className="font-mono text-[10px] sm:text-xs font-semibold text-cyan-300 uppercase px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">
+                          <span className="font-mono text-[10px] sm:text-xs font-semibold text-cyan-700 dark:text-cyan-300 uppercase px-2.5 py-0.5 rounded bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/30">
                             {currentProject.category}
                           </span>
                         </div>
-                        <span className="font-mono text-[10px] sm:text-xs text-emerald-400 font-bold tracking-wider px-2.5 py-0.5 rounded bg-emerald-950/60 border border-emerald-500/40 shadow-[0_0_10px_rgba(0,255,102,0.2)]">
+                        <span className="font-mono text-[10px] sm:text-xs text-emerald-700 dark:text-emerald-400 font-bold tracking-wider px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-500/40 shadow-[0_0_10px_rgba(0,255,102,0.2)]">
                           {currentProject.year}
                         </span>
                       </div>
 
                       {/* Project Title: Generous Full-Width Typography, 0% Truncation */}
-                      <h3 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-white leading-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                      <h3 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-slate-900 dark:text-white leading-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                         {currentProject.title}
                       </h3>
 
                       {/* Complete Description: Ample space, 0% Truncation */}
-                      <p className="font-sans text-xs sm:text-sm md:text-[15px] text-zinc-300 leading-relaxed drop-shadow-sm max-w-2xl">
+                      <p className="font-sans text-xs sm:text-sm md:text-[15px] text-slate-600 dark:text-zinc-300 leading-relaxed drop-shadow-sm max-w-2xl">
                         {currentProject.description}
                       </p>
 
@@ -473,7 +473,7 @@ export function ArgentLoopInfiniteSlider() {
                         {currentProject.metrics.map((m, mIdx) => (
                           <div
                             key={mIdx}
-                            className="flex items-center gap-2 px-3 py-1 rounded bg-[#071328]/80 border border-cyan-500/30 text-cyan-200 text-[11px] sm:text-xs font-mono tracking-wide shadow-[0_0_10px_rgba(0,240,255,0.08)]"
+                            className="flex items-center gap-2 px-3 py-1 rounded bg-cyan-50 dark:bg-[#071328]/80 border border-cyan-500/30 text-cyan-800 dark:text-cyan-200 text-[11px] sm:text-xs font-mono tracking-wide shadow-[0_0_10px_rgba(0,240,255,0.08)]"
                           >
                             <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_6px_#00f0ff]" />
                             <span>{m}</span>
@@ -496,7 +496,7 @@ export function ArgentLoopInfiniteSlider() {
                           <button
                             onClick={() => scrollToSlide(activeIdx - 1)}
                             disabled={activeIdx === 0}
-                            className="px-2.5 py-2 rounded font-mono text-xs uppercase border border-cyan-500/30 text-cyan-300 hover:border-cyan-400 hover:bg-cyan-950/40 disabled:opacity-25 disabled:pointer-events-none transition-all flex items-center gap-1"
+                            className="px-2.5 py-2 rounded font-mono text-xs uppercase border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 disabled:opacity-25 disabled:pointer-events-none transition-all flex items-center gap-1"
                             title={language === "id" ? "Sistem Sebelumnya" : "Previous System"}
                           >
                             <ChevronLeft className="w-3.5 h-3.5" />
@@ -505,7 +505,7 @@ export function ArgentLoopInfiniteSlider() {
                           <button
                             onClick={() => scrollToSlide(activeIdx + 1)}
                             disabled={activeIdx === projectData.length - 1}
-                            className="px-2.5 py-2 rounded font-mono text-xs uppercase border border-cyan-500/30 text-cyan-300 hover:border-cyan-400 hover:bg-cyan-950/40 disabled:opacity-25 disabled:pointer-events-none transition-all flex items-center gap-1"
+                            className="px-2.5 py-2 rounded font-mono text-xs uppercase border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 disabled:opacity-25 disabled:pointer-events-none transition-all flex items-center gap-1"
                             title={language === "id" ? "Sistem Selanjutnya" : "Next System"}
                           >
                             <span className="hidden sm:inline">{language === "id" ? "SELANJUTNYA" : "NEXT"}</span>
@@ -532,16 +532,16 @@ export function ArgentLoopInfiniteSlider() {
               <div className="w-full flex items-center justify-between border-t border-cyan-500/20 pt-4 mt-6 md:mt-8">
                 {/* Slide Counter */}
                 <div className="flex items-center gap-2">
-                  <span className="font-pixel text-[9px] text-cyan-400/80 tracking-widest uppercase">
+                  <span className="font-pixel text-[9px] text-cyan-600 dark:text-cyan-400/80 tracking-widest uppercase">
                     {language === "id" ? "HALAMAN" : "PAGE"}
                   </span>
-                  <span className="font-mono text-xs text-cyan-300 font-bold tabular-nums">
+                  <span className="font-mono text-xs text-cyan-800 dark:text-cyan-300 font-bold tabular-nums">
                     0{activeIdx + 1} / 0{projectData.length}
                   </span>
                 </div>
 
                 {/* Cyber Progress Track Line */}
-                <div className="w-32 sm:w-48 md:w-64 h-1.5 bg-cyan-950/60 rounded-full border border-cyan-500/30 overflow-hidden relative mx-4">
+                <div className="w-32 sm:w-48 md:w-64 h-1.5 bg-slate-200 dark:bg-cyan-950/60 rounded-full border border-slate-300 dark:border-cyan-500/30 overflow-hidden relative mx-4">
                   <div
                     className="h-full bg-cyan-400 shadow-[0_0_12px_#00f0ff] transition-all duration-300"
                     style={{ width: `${((activeIdx + 1) / projectData.length) * 100}%` }}
@@ -557,7 +557,7 @@ export function ArgentLoopInfiniteSlider() {
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         activeIdx === dotIdx
                           ? "bg-cyan-400 scale-125 shadow-[0_0_8px_#00f0ff]"
-                          : "bg-cyan-900/60 hover:bg-cyan-500/50"
+                          : "bg-slate-300 dark:bg-cyan-900/60 hover:bg-cyan-400"
                       }`}
                       title={language === "id" ? `Lompat ke sistem 0${dotIdx + 1}` : `Jump to system 0${dotIdx + 1}`}
                     />

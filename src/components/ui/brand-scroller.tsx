@@ -34,17 +34,17 @@ const toolItems = [
 ];
 
 const ScrollerItem = ({ name, icon }: { name: string; icon: string }) => (
-    <div className="flex items-center gap-3.5 px-7 py-3.5 mx-2 rounded-xl bg-[#050914]/80 border border-white/10 hover:border-cyan-400/60 hover:bg-[#071328] shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,240,255,0.25)] transition-all duration-300 group cursor-pointer select-none">
+    <div className="flex items-center gap-3.5 px-7 py-3.5 mx-2 rounded-xl bg-card dark:bg-[#050914]/80 border border-slate-200 dark:border-white/10 hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:bg-slate-50 dark:hover:bg-[#071328] shadow-[0_2px_12px_rgba(0,0,0,0.06)] dark:shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_4px_20px_rgba(0,240,255,0.15)] dark:hover:shadow-[0_0_30px_rgba(0,240,255,0.25)] transition-all duration-300 group cursor-pointer select-none">
         <div className="relative w-8 h-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
             <Image
                 src={icon}
                 alt={name}
                 fill
-                className="object-contain grayscale contrast-125 opacity-60 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-300"
+                className="object-contain grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 transition-all duration-300"
                 unoptimized
             />
         </div>
-        <p className="text-base font-mono font-medium tracking-wider text-zinc-400 group-hover:text-white group-hover:font-bold transition-all duration-300 whitespace-nowrap">
+        <p className="text-base font-mono font-medium tracking-wider text-slate-700 dark:text-zinc-400 group-hover:text-slate-950 dark:group-hover:text-white group-hover:font-bold transition-all duration-300 whitespace-nowrap">
             {name}
         </p>
     </div>

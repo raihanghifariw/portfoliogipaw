@@ -97,7 +97,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-[#05070f] font-sans relative select-none"
+      className="w-full bg-background dark:bg-[#05070f] font-sans relative select-none"
       ref={containerRef}
       style={{ height: "400vh" }} // 400vh scroll container matching personal-blog-ref
     >
@@ -113,13 +113,13 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
           viewport={{ once: true }}
         >
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-950/80 border border-cyan-500/40 rounded text-cyan-400 font-mono text-[10px] md:text-xs tracking-[0.2em] mb-3 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 rounded text-cyan-700 dark:text-cyan-400 font-mono text-[10px] md:text-xs tracking-[0.2em] mb-3 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-ping" />
             <span>{isId ? "TRAJEKTORI KARIER" : "CAREER TRAJECTORY"}</span>
           </div>
 
           <motion.h2
-            className="text-3xl sm:text-5xl md:text-6xl font-black mb-3 text-white tracking-tight leading-[1.05] drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]"
+            className="text-3xl sm:text-5xl md:text-6xl font-black mb-3 text-slate-900 dark:text-white tracking-tight leading-[1.05] drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]"
             whileHover={{ scale: 1.01, originX: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
@@ -127,7 +127,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
           </motion.h2>
 
           <motion.p
-            className="text-slate-300 font-sans text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed"
+            className="text-slate-600 dark:text-slate-300 font-sans text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed"
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -144,8 +144,8 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
         <div className="relative w-full flex items-center justify-center h-full">
 
           {/* Cinematic Edge Gradient Overlays to prevent hard text clipping on viewport boundaries */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#05070f] via-[#05070f]/90 to-transparent z-40" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#05070f] via-[#05070f]/90 to-transparent z-40" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-background via-background/90 to-transparent dark:from-[#05070f] dark:via-[#05070f]/90 dark:to-transparent z-40" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-background via-background/90 to-transparent dark:from-[#05070f] dark:via-[#05070f]/90 dark:to-transparent z-40" />
 
           {/* Background Ambient Line */}
           <div className="absolute left-0 w-full top-1/2 -translate-y-1/2 overflow-hidden h-[2px] bg-gradient-to-r from-transparent via-cyan-900/50 to-transparent" />
@@ -180,7 +180,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
                   {/* Diamond Node Marker on the Line */}
                   <div
                     className={cn(
-                      "absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#05070f] flex items-center justify-center border-none z-20 transition-transform duration-500",
+                      "absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background dark:bg-[#05070f] flex items-center justify-center border-none z-20 transition-transform duration-500",
                       isActive ? "scale-125" : "group-hover:scale-125"
                     )}
                   >
@@ -197,14 +197,14 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
                       className={cn(
                         "h-6 w-6 rotate-45 border flex items-center justify-center transition-all duration-500",
                         isActive
-                          ? "bg-cyan-950 border-cyan-300 shadow-[0_0_18px_rgba(0,240,255,1)]"
-                          : "bg-[#070b16] border-cyan-500/50 group-hover:bg-cyan-950/60 group-hover:border-cyan-400"
+                          ? "bg-cyan-100 dark:bg-cyan-950 border-cyan-500 dark:border-cyan-300 shadow-[0_0_18px_rgba(0,240,255,1)]"
+                          : "bg-card dark:bg-[#070b16] border-slate-300 dark:border-cyan-500/50 group-hover:bg-cyan-50 dark:group-hover:bg-cyan-950/60 group-hover:border-cyan-500 dark:group-hover:border-cyan-400"
                       )}
                     >
                       <span
                         className={cn(
                           "-rotate-45 font-mono text-[9px] font-extrabold tracking-tighter",
-                          isActive ? "text-cyan-300 drop-shadow-[0_0_6px_rgba(0,240,255,0.9)]" : "text-slate-400 group-hover:text-cyan-300"
+                          isActive ? "text-cyan-700 dark:text-cyan-300 drop-shadow-[0_0_6px_rgba(0,240,255,0.9)]" : "text-slate-600 dark:text-slate-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300"
                         )}
                       >
                         {item.node || `0${index + 1}`}
@@ -216,11 +216,7 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
                     <>
                       {/* Mask to hide the line after the end circle */}
                       <div
-                        className="absolute top-1/2 left-8 h-[20px] w-full bg-[#05070f] -translate-y-1/2 z-10"
-                        style={{
-                          boxShadow:
-                            "400px 0 0 0 #05070f, 800px 0 0 0 #05070f, 1200px 0 0 0 #05070f, 1600px 0 0 0 #05070f, 2000px 0 0 0 #05070f, 2400px 0 0 0 #05070f, 2800px 0 0 0 #05070f, 3200px 0 0 0 #05070f, 3600px 0 0 0 #05070f, 4000px 0 0 0 #05070f",
-                        }}
+                        className="absolute top-1/2 left-8 h-[20px] w-full bg-background dark:bg-[#05070f] -translate-y-1/2 z-10"
                       />
                       {/* The content block for View More (clean spacing from node 06 reticle) */}
                       <div
@@ -243,8 +239,8 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
                       >
                         <h3
                           className={cn(
-                            "text-base md:text-lg font-bold font-heading text-white tracking-tight leading-snug line-clamp-2 transition-all duration-500 drop-shadow-[0_0_12px_rgba(0,240,255,0.3)]",
-                            isActive ? "opacity-0 translate-x-2" : "group-hover:opacity-0 group-hover:translate-x-2 text-slate-200 group-hover:text-cyan-300"
+                            "text-base md:text-lg font-bold font-heading text-slate-900 dark:text-white tracking-tight leading-snug line-clamp-2 transition-all duration-500 drop-shadow-[0_0_12px_rgba(0,240,255,0.3)]",
+                            isActive ? "opacity-0 translate-x-2" : "group-hover:opacity-0 group-hover:translate-x-2 text-slate-700 dark:text-slate-200 group-hover:text-cyan-700 dark:group-hover:text-cyan-300"
                           )}
                         >
                           {item.title}
@@ -264,9 +260,9 @@ export const HorizontalTimeline = ({ data }: { data: TimelineEntry[] }) => {
                             isEven && !isActive ? "group-hover:translate-y-1" : ""
                           )}
                         >
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-950/90 border border-cyan-500/40 rounded-md shadow-[0_0_12px_rgba(0,240,255,0.25)]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                            <span className="text-[10px] md:text-xs font-mono text-cyan-300 uppercase tracking-widest">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-50 dark:bg-cyan-950/90 border border-cyan-500/40 rounded-md shadow-[0_0_12px_rgba(0,240,255,0.25)]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+                            <span className="text-[10px] md:text-xs font-mono text-cyan-800 dark:text-cyan-300 uppercase tracking-widest">
                               {item.period}
                             </span>
                           </div>
