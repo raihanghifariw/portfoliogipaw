@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1214"/>
+      <stop offset="50%" stop-color="#0e1f26"/>
+      <stop offset="100%" stop-color="#060b0d"/>
+    </linearGradient>
+    <filter id="glowEffect4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgGrad4)"/>
+  
+  <g opacity="0.12">
+    <path d="M 0 50 L 800 50 M 0 100 L 800 100 M 0 150 L 800 150 M 0 200 L 800 200 M 0 250 L 800 250 M 0 300 L 800 300 M 0 350 L 800 350 M 0 400 L 800 400" stroke="#14b8a6" stroke-width="1"/>
+    <path d="M 50 0 L 50 450 M 100 0 L 100 450 M 150 0 L 150 450 M 200 0 L 200 450 M 250 0 L 250 450 M 300 0 L 300 450 M 350 0 L 350 450 M 400 0 L 400 450 M 450 0 L 450 450 M 500 0 L 500 450 M 550 0 L 550 450 M 600 0 L 600 450 M 650 0 L 650 450 M 700 0 L 700 450 M 750 0 L 750 450" stroke="#14b8a6" stroke-width="1"/>
+  </g>
+
+  <circle cx="200" cy="200" r="140" fill="#0d9488" opacity="0.18" filter="url(#glowEffect4)"/>
+  <circle cx="620" cy="240" r="140" fill="#0284c7" opacity="0.16" filter="url(#glowEffect4)"/>
+
+  <rect x="60" y="45" width="680" height="360" rx="16" fill="#0f1f24" fill-opacity="0.85" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+
+  <rect x="60" y="45" width="680" height="42" rx="16" fill="#152e36" fill-opacity="0.9"/>
+  <circle cx="90" cy="66" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="106" cy="66" r="5" fill="#eab308" opacity="0.8"/>
+  <circle cx="122" cy="66" r="5" fill="#22c55e" opacity="0.8"/>
+  <text x="150" y="71" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1">AGENTIC-OPS // RAG-SYSTEM // PROMPT-INJECTION-DEFENSE</text>
+
+  <rect x="580" y="56" width="140" height="20" rx="10" fill="#0f766e" fill-opacity="0.3" stroke="#2dd4bf" stroke-width="1"/>
+  <text x="650" y="70" fill="#99f6e4" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" text-anchor="middle">31/31 UNIT TESTS PASS</text>
+
+  <!-- Flow Diagram: User Intent -> Prompt Guard -> Vector Store -> Confidence Router -->
+  <g transform="translate(90, 125)">
+    <!-- Node 1: User Request -->
+    <rect x="0" y="40" width="110" height="50" rx="8" fill="#134e4a" stroke="#2dd4bf" stroke-width="1.5"/>
+    <text x="55" y="65" fill="#f0fdfa" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" text-anchor="middle">User Operations</text>
+    <text x="55" y="80" fill="#99f6e4" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Intent Query</text>
+
+    <!-- Arrow 1 -->
+    <path d="M 110 65 L 140 65" stroke="#2dd4bf" stroke-width="2"/>
+
+    <!-- Node 2: 3-Layer Defense -->
+    <rect x="140" y="30" width="120" height="70" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="200" y="55" fill="#f8fafc" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" text-anchor="middle">3-Layer Defense</text>
+    <text x="200" y="72" fill="#c7d2fe" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Semantic Guard</text>
+    <text x="200" y="88" fill="#c7d2fe" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Regex / Jailbreak</text>
+
+    <!-- Arrow 2 -->
+    <path d="M 260 65 L 290 65" stroke="#2dd4bf" stroke-width="2"/>
+
+    <!-- Node 3: Hybrid Retrieval (ChromaDB + BM25) -->
+    <rect x="290" y="40" width="120" height="50" rx="8" fill="#082f49" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="350" y="65" fill="#f0fdfa" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" text-anchor="middle">Hybrid RAG</text>
+    <text x="350" y="80" fill="#7dd3fc" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Vector + BM25</text>
+
+    <!-- Arrow 3 -->
+    <path d="M 410 65 L 440 65" stroke="#2dd4bf" stroke-width="2"/>
+
+    <!-- Node 4: Confidence-Based Routing -->
+    <rect x="440" y="30" width="160" height="70" rx="8" fill="#042f2e" stroke="#14b8a6" stroke-width="1.5"/>
+    <text x="520" y="55" fill="#f0fdfa" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" text-anchor="middle">Deterministic Router</text>
+    <text x="520" y="72" fill="#5eead4" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Confidence &gt; 0.85 → Exec Tool</text>
+    <text x="520" y="88" fill="#5eead4" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Fallback → Human in loop</text>
+
+    <!-- Bottom: Pydantic Validation Badge -->
+    <g transform="translate(100, 130)">
+      <rect x="0" y="0" width="420" height="35" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="210" y="22" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">✓ Strict Pydantic JSON Schema Validation on all tool payloads</text>
+    </g>
+  </g>
+</svg>
