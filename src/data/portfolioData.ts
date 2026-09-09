@@ -1,4 +1,4 @@
-﻿import { Project, ExperienceItem, OrganizationItem, EducationItem, AwardItem, FAQItem, StrategicDirective, CoreFocusDomain, EngineeringTechItem, ToolingItem } from "@/types";
+import { Project, ExperienceItem, OrganizationItem, EducationItem, AwardItem, FAQItem, StrategicDirective, CoreFocusDomain, EngineeringTechItem, ToolingItem } from "@/types";
 
 export const I18N_DATA: Record<"en" | "id", Record<string, string>> = {
   en: {
@@ -583,7 +583,7 @@ export const AWARDS_DATA: AwardItem[] = [
     id: "pragma-award",
     period: "01/2026 : HACKATHON WINNER",
     badge: "HACKATHON WINNER",
-    icon: "ðŸ†",
+    icon: "🏆",
     title: "PRAGMA Collaborative Hackathon Award",
     issuer: "Thammasat University, UCSD, Osaka University",
     description: "Winner Teamwork Award at a prestigious 15-university Asia-Pacific hackathon for co-developing a Decision Transformer pipeline predicting continuous ICU drug dosages."
@@ -592,7 +592,7 @@ export const AWARDS_DATA: AwardItem[] = [
     id: "samsung-innovation",
     period: "09/2024 : NATIONAL COMPETITION",
     badge: "NATIONAL COMPETITION",
-    icon: "ðŸŒŸ",
+    icon: "🌟",
     title: "Samsung Innovation Campus Semi-Finalist",
     issuer: "Skilvul & Samsung",
     description: "Ranked as Semi-Finalist in a national Samsung-sponsored Artificial Intelligence competition among 5,000+ competitive participants."
@@ -601,7 +601,7 @@ export const AWARDS_DATA: AwardItem[] = [
     id: "aws-cert",
     period: "09/2025 : AWS CERTIFIED",
     badge: "AWS CERTIFIED",
-    icon: "ðŸ“œ",
+    icon: "📜",
     title: "AWS Certified AI Practitioner",
     issuer: "Amazon Web Services (Score: 826 / 1000)",
     description: "Verified expertise in cloud AI infrastructure, foundation models, machine learning lifecycle, and responsible AI deployment."
@@ -610,7 +610,7 @@ export const AWARDS_DATA: AwardItem[] = [
     id: "citi-toeic",
     period: "RESEARCH & PROFICIENCY",
     badge: "ETHICS & PROFICIENCY",
-    icon: "ðŸŒ",
+    icon: "🌐",
     title: "Research Ethics & TOEIC English",
     issuer: "CITI Program & ETS TOEIC",
     description: "CITI certified in Data/Specimens Only Research and Conflicts of Interest. ETS TOEIC Score: 605 with fluent professional English communication."
@@ -1325,7 +1325,7 @@ export const EDUCATION_DATA_ID: EducationItem = {
   period: "09/2022 - 04/2026 : SARJANA ILMU KOMPUTER",
   degree: "Sarjana Ilmu Komputer (S.Kom.)",
   institution: "Universitas YARSI",
-  faculty: "Fakultas Teknologi Informasi â€¢ Jakarta, Indonesia",
+  faculty: "Fakultas Teknologi Informasi • Jakarta, Indonesia",
   gpa: "3.92 / 4.00",
   thesis: {
     label: "RISET TUGAS AKHIR SARJANA",
@@ -1349,7 +1349,7 @@ export const AWARDS_DATA_ID: AwardItem[] = [
     id: "pragma-award",
     period: "01/2026 : JUARA HACKATHON",
     badge: "JUARA HACKATHON",
-    icon: "ðŸ†",
+    icon: "🏆",
     title: "Penghargaan Hackathon Kolaboratif PRAGMA",
     issuer: "Thammasat University, UCSD, Osaka University",
     description: "Pemenang Teamwork Award pada hackathon bergengsi tingkat Asia-Pasifik yang diikuti 15 universitas atas kolaborasi pengembangan pipeline Decision Transformer dosis obat ICU."
@@ -1358,7 +1358,7 @@ export const AWARDS_DATA_ID: AwardItem[] = [
     id: "samsung-innovation",
     period: "09/2024 : KOMPETISI NASIONAL",
     badge: "KOMPETISI NASIONAL",
-    icon: "ðŸŒŸ",
+    icon: "🌟",
     title: "Semi-Finalis Samsung Innovation Campus",
     issuer: "Skilvul & Samsung",
     description: "Meraih posisi Semi-Finalis pada kompetisi Kecerdasan Artifisial nasional yang disponsori oleh Samsung di antara 5.000+ peserta kompetitif."
@@ -1367,7 +1367,7 @@ export const AWARDS_DATA_ID: AwardItem[] = [
     id: "aws-cert",
     period: "09/2025 : TERSERTIFIKASI AWS",
     badge: "TERSERTIFIKASI AWS",
-    icon: "ðŸ“œ",
+    icon: "📜",
     title: "AWS Certified AI Practitioner",
     issuer: "Amazon Web Services (Skor: 826 / 1000)",
     description: "Kompetensi terverifikasi dalam infrastruktur AI cloud, foundation models, siklus hidup machine learning, dan penerapan AI yang bertanggung jawab."
@@ -1376,7 +1376,7 @@ export const AWARDS_DATA_ID: AwardItem[] = [
     id: "citi-toeic",
     period: "RISET & KEMAHIRAN BAHASA",
     badge: "ETIKA & KEMAHIRAN",
-    icon: "ðŸŒ",
+    icon: "🌐",
     title: "Etika Riset CITI & Bahasa Inggris TOEIC",
     issuer: "Program CITI & ETS TOEIC",
     description: "Tersertifikasi CITI dalam Riset Data/Spesimen dan Pencegahan Konflik Kepentingan. Skor ETS TOEIC: 605 dengan komunikasi bahasa Inggris profesional yang fasih."

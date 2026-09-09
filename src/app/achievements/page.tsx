@@ -47,8 +47,8 @@ export default function AchievementsPage() {
 
           <p className="text-sm sm:text-base font-body text-zinc-300 max-w-3xl leading-relaxed">
             {isId
-              ? "Kemenangan hackathon internasional terverifikasi, penghargaan Samsung Innovation Campus, 9 lencana digital resmi Credly (AWS, Google Cloud, IBM, Cisco), serta sertifikat etika riset klinis terakreditasi."
-              : "Verified international hackathon victories, Samsung Innovation Campus honors, 9 official Credly digital badges (AWS, Google Cloud, IBM, Cisco), and clinical research ethics credentials."}
+              ? "Kemenangan hackathon internasional terverifikasi, penghargaan Samsung Innovation Campus, 21 lencana digital resmi Credly (AWS, Google Cloud, IBM, Cisco), serta sertifikat etika riset klinis terakreditasi."
+              : "Verified international hackathon victories, Samsung Innovation Campus honors, 21 official Credly digital badges (AWS, Google Cloud, IBM, Cisco), and clinical research ethics credentials."}
           </p>
         </motion.div>
 
