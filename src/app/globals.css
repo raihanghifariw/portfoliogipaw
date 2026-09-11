@@ -239,6 +239,66 @@ code, kbd, samp, pre, nav a, [role="navigation"] a {
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(139, 92, 246, 0.15);
 }
 
+/* Flagship CTA Button in ZoomParallax */
+.flagship-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #06152b !important;
+  color: #67e8f9 !important;
+  border: 1px solid rgba(6, 182, 212, 0.6) !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35) !important;
+}
+
+.flagship-cta-btn:hover {
+  background-color: #00f0ff !important;
+  color: #020617 !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.85) !important;
+  transform: scale(1.05);
+}
+
+.flagship-cta-btn:active {
+  transform: scale(0.95);
+}
+
+.flagship-cta-btn .cta-arrow-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: inherit !important;
+}
+
+.flagship-cta-btn:hover .cta-arrow-icon {
+  transform: translate(3px, -3px);
+  color: inherit !important;
+}
+
+/* Light Mode Flagship CTA Button */
+html[data-theme="light"] .flagship-cta-btn {
+  background-color: #ffffff !important;
+  color: #0891b2 !important;
+  border: 2px solid #06b6d4 !important;
+  box-shadow: 0 0 22px rgba(6, 182, 212, 0.45) !important;
+}
+
+html[data-theme="light"] .flagship-cta-btn:hover {
+  background-color: #06b6d4 !important;
+  color: #ffffff !important;
+  border-color: #0891b2 !important;
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.85) !important;
+  transform: scale(1.05);
+}
+
 /* Marquee Animation Keyframes */
 @keyframes marquee {
   0% {
