@@ -48,26 +48,19 @@ export function ZoomParallax({ images, children }: ZoomParallaxProps) {
                                 index === 6 ? '[&>div]:!top-[22.5vh] [&>div]:!left-[25vw] [&>div]:!h-[15vh] [&>div]:!w-[15vw]' : ''
                             } `}
 						>
-							<div className="relative h-[25vh] w-[25vw] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-muted/20 flex items-center justify-center pointer-events-auto">
-								{index === 0 && children ? (
-									<div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden group">
-										<img
-											src={src || '/placeholder.svg'}
-											alt={alt || `Parallax image ${index + 1}`}
-											className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-										/>
-										<div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500 pointer-events-none" />
-										
+							<div className="relative h-[25vh] w-[25vw] rounded-2xl overflow-hidden shadow-2xl border border-slate-300 dark:border-white/10 bg-slate-900 flex items-center justify-center pointer-events-auto group">
+								<img
+									src={src || '/placeholder.svg'}
+									alt={alt || `Parallax image ${index + 1}`}
+									className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+								/>
+								{index === 0 && children && (
+									<>
+										<div className="absolute inset-0 bg-black/45 dark:bg-black/60 group-hover:bg-black/55 transition-colors duration-500 pointer-events-none" />
 										<div className="relative z-10 flex flex-col items-center justify-center pointer-events-auto">
 											{children}
 										</div>
-									</div>
-								) : (
-									<img
-										src={src || '/placeholder.svg'}
-										alt={alt || `Parallax image ${index + 1}`}
-										className="h-full w-full object-cover"
-									/>
+									</>
 								)}
 							</div>
 						</motion.div>

@@ -107,10 +107,10 @@ export default function StatsSection({ showOnly }: { scrollYProgress?: any; show
                         <ZoomParallax images={images}>
                             <Link 
                                 href="/projects" 
-                                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-card dark:bg-[#06152b] text-cyan-600 dark:text-cyan-300 border border-slate-300 dark:border-cyan-500/60 rounded-full font-mono font-bold uppercase tracking-widest text-xs hover:bg-cyan-500 hover:text-black hover:border-cyan-400 hover:scale-105 active:scale-95 transition-all shadow-[0_0_25px_rgba(0,240,255,0.2)]"
+                                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-black/60 dark:bg-[#06152b]/80 backdrop-blur-md text-white dark:text-cyan-300 border border-white/20 dark:border-cyan-500/60 rounded-full font-mono font-bold uppercase tracking-widest text-xs hover:bg-cyan-400 hover:text-slate-950 hover:border-cyan-300 hover:scale-105 active:scale-95 transition-all shadow-[0_4px_25px_rgba(0,0,0,0.3)]"
                             >
                                 <span>{isId ? "Lihat Karya Unggulan" : "View Flagship Work"}</span>
-                                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                <ArrowUpRight className="w-4 h-4 text-cyan-400 group-hover:text-slate-950 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                             </Link>
                         </ZoomParallax>
                     </div>
