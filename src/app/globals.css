@@ -1105,13 +1105,13 @@ html[data-theme="light"] .bg-background {
   background-color: var(--bg-base) !important;
 }
 
-/* Also map standard dark classes (zinc-900/950, slate-900/950, black) */
-html[data-theme="light"] [class*="bg-zinc-950"]:not(.dark-island *),
-html[data-theme="light"] [class*="bg-slate-950"]:not(.dark-island *),
-html[data-theme="light"] [class*="bg-neutral-950"]:not(.dark-island *),
-html[data-theme="light"] [class*="bg-zinc-900"]:not(.dark-island *),
-html[data-theme="light"] [class*="bg-slate-900"]:not(.dark-island *),
-html[data-theme="light"] [class*="bg-black"]:not(.text-on-accent):not(.dark-island *) {
+html[data-theme="light"] [class*="bg-zinc-950"]:not(.dark-island *):not([class*="bg-zinc-950/"]),
+html[data-theme="light"] [class*="bg-slate-950"]:not(.dark-island *):not([class*="bg-slate-950/"]),
+html[data-theme="light"] [class*="bg-neutral-950"]:not(.dark-island *):not([class*="bg-neutral-950/"]),
+html[data-theme="light"] [class*="bg-zinc-900"]:not(.dark-island *):not([class*="bg-zinc-900/"]),
+html[data-theme="light"] [class*="bg-slate-900"]:not(.dark-island *):not([class*="bg-slate-900/"]),
+html[data-theme="light"] .bg-black:not(.text-on-accent):not(.dark-island *),
+html[data-theme="light"] [class~="bg-black"]:not(.text-on-accent):not(.dark-island *) {
   background-color: var(--bg-surface) !important;
 }
 
