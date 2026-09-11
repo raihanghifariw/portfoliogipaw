@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen, Camera } from "lucide-react";
+import { ArrowUpRight, BookOpen, Camera, MapPin } from "lucide-react";
 import MarqueeRibbon from "@/components/ui/MarqueeRibbon";
 import { WordReveal } from "@/components/animations/ScrollReveal";
 import { usePortfolio } from "@/context/PortfolioContext";
@@ -154,8 +154,9 @@ export default function JournalInsightsSection() {
                     <p className="text-[11px] font-mono text-white font-bold leading-snug line-clamp-2">
                       {g.label}
                     </p>
-                    <p className="text-[9px] font-mono text-slate-400 mt-1 flex items-center gap-1">
-                      <span>📍 {g.location}</span>
+                    <p className="text-[9px] font-mono text-slate-400 mt-1 flex items-center gap-1.5">
+                      <MapPin className="w-3 h-3 text-cyan-400 shrink-0" />
+                      <span>{g.location}</span>
                     </p>
                   </figcaption>
                 </Link>

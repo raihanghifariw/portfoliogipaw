@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
@@ -40,12 +40,12 @@ const themeConfigs: Record<LoaderType, ThemeConfig> = {
     metricLabel: 'RETRIEVAL LATENCY',
     metricValue: '8.4 ms',
     faces: [
-      { label: 'LLM', sub: 'TRANSFORMER CORE', code: '01', glyph: 'ðŸ§ ' },
-      { label: 'AGENTS', sub: 'LANGGRAPH MESH', code: '02', glyph: 'âš¡' },
-      { label: 'DATA', sub: 'HYBRID VECTOR RAG', code: '03', glyph: 'ðŸ—„ï¸' },
-      { label: 'VISION', sub: 'MULTIMODAL VLM', code: '04', glyph: 'ðŸ‘ï¸' },
-      { label: 'SHIELD', sub: 'PROMPT DEFENSE', code: '05', glyph: 'ðŸ›¡ï¸' },
-      { label: 'NEURAL', sub: 'REASONING GRAPH', code: '06', glyph: 'ðŸŒ' },
+      { label: 'LLM', sub: 'TRANSFORMER CORE', code: '01', glyph: '[AI]' },
+      { label: 'AGENTS', sub: 'LANGGRAPH MESH', code: '02', glyph: '[NET]' },
+      { label: 'DATA', sub: 'HYBRID VECTOR RAG', code: '03', glyph: '[RAG]' },
+      { label: 'VISION', sub: 'MULTIMODAL VLM', code: '04', glyph: '[VLM]' },
+      { label: 'SHIELD', sub: 'PROMPT DEFENSE', code: '05', glyph: '[SEC]' },
+      { label: 'NEURAL', sub: 'REASONING GRAPH', code: '06', glyph: '[CORE]' },
     ]
   },
   software: {
@@ -57,12 +57,12 @@ const themeConfigs: Record<LoaderType, ThemeConfig> = {
     metricLabel: 'SAFETY MARGIN',
     metricValue: '99.4 %',
     faces: [
-      { label: 'SAC', sub: 'CONTINUOUS CONTROL', code: '01', glyph: 'âš¡' },
-      { label: 'SAFETY', sub: 'LAGRANGIAN BOUND', code: '02', glyph: 'ðŸ›¡ï¸' },
-      { label: 'VISION', sub: 'EDGE PERCEPTION', code: '03', glyph: 'ðŸ‘ï¸' },
-      { label: 'POLICY', sub: 'ACTOR-CRITIC NET', code: '04', glyph: 'ðŸ§ ' },
-      { label: 'CUDA', sub: 'HPC GPU PARALLEL', code: '05', glyph: 'âš™ï¸' },
-      { label: 'CLINIC', sub: 'ICU TELEMETRY', code: '06', glyph: 'ðŸ“ˆ' },
+      { label: 'SAC', sub: 'CONTINUOUS CONTROL', code: '01', glyph: '[SAC]' },
+      { label: 'SAFETY', sub: 'LAGRANGIAN BOUND', code: '02', glyph: '[SAFE]' },
+      { label: 'VISION', sub: 'EDGE PERCEPTION', code: '03', glyph: '[EDGE]' },
+      { label: 'POLICY', sub: 'ACTOR-CRITIC NET', code: '04', glyph: '[NET]' },
+      { label: 'CUDA', sub: 'HPC GPU PARALLEL', code: '05', glyph: '[CUDA]' },
+      { label: 'CLINIC', sub: 'ICU TELEMETRY', code: '06', glyph: '[DATA]' },
     ]
   },
   softskill: {
@@ -74,12 +74,12 @@ const themeConfigs: Record<LoaderType, ThemeConfig> = {
     metricLabel: 'THROUGHPUT RATE',
     metricValue: '12.8 GB/s',
     faces: [
-      { label: 'CLUSTER', sub: 'GPU COMPUTE MESH', code: '01', glyph: 'ðŸ–¥ï¸' },
-      { label: 'FASTAPI', sub: 'SUB-10MS INFERENCE', code: '02', glyph: 'âš¡' },
-      { label: 'QDRANT', sub: 'DISTRIBUTED VECTOR', code: '03', glyph: 'ðŸ—„ï¸' },
-      { label: 'DOCKER', sub: 'MICROSERVICES', code: '04', glyph: 'ðŸ“¦' },
-      { label: 'K8S', sub: 'POD ORCHESTRATION', code: '05', glyph: 'â˜¸ï¸' },
-      { label: 'MLOPS', sub: 'DISTRIBUTED TRAIN', code: '06', glyph: 'âš™ï¸' },
+      { label: 'CLUSTER', sub: 'GPU COMPUTE MESH', code: '01', glyph: '[MESH]' },
+      { label: 'FASTAPI', sub: 'SUB-10MS INFERENCE', code: '02', glyph: '[API]' },
+      { label: 'QDRANT', sub: 'DISTRIBUTED VECTOR', code: '03', glyph: '[VEC]' },
+      { label: 'DOCKER', sub: 'MICROSERVICES', code: '04', glyph: '[DOC]' },
+      { label: 'K8S', sub: 'POD ORCHESTRATION', code: '05', glyph: '[K8S]' },
+      { label: 'MLOPS', sub: 'DISTRIBUTED TRAIN', code: '06', glyph: '[OPS]' },
     ]
   },
   default: {
@@ -91,48 +91,48 @@ const themeConfigs: Record<LoaderType, ThemeConfig> = {
     metricLabel: 'CORE CLOCK',
     metricValue: '120 FPS',
     faces: [
-      { label: 'LLM', sub: 'REASONING', code: '01', glyph: 'ðŸ§ ' },
-      { label: 'DATA', sub: 'EMBEDDINGS', code: '02', glyph: 'ðŸ—„ï¸' },
-      { label: 'GPU', sub: 'CUDA CORE', code: '03', glyph: 'âš¡' },
-      { label: 'RL', sub: 'CONTINUOUS', code: '04', glyph: 'âš™ï¸' },
-      { label: 'ARCH', sub: 'PIPELINES', code: '05', glyph: 'ðŸ›¡ï¸' },
-      { label: 'SERVE', sub: 'ENDPOINTS', code: '06', glyph: 'ðŸŒ' },
+      { label: 'LLM', sub: 'REASONING', code: '01', glyph: '[AI]' },
+      { label: 'DATA', sub: 'EMBEDDINGS', code: '02', glyph: '[DATA]' },
+      { label: 'GPU', sub: 'CUDA CORE', code: '03', glyph: '[CUDA]' },
+      { label: 'RL', sub: 'CONTINUOUS', code: '04', glyph: '[RL]' },
+      { label: 'ARCH', sub: 'PIPELINES', code: '05', glyph: '[ARCH]' },
+      { label: 'SERVE', sub: 'ENDPOINTS', code: '06', glyph: '[API]' },
     ]
   }
 };
 
 const facesId: Record<LoaderType, FaceSpec[]> = {
   ai: [
-    { label: 'LLM', sub: 'INTI TRANSFORMER', code: '01', glyph: 'ðŸ§ ' },
-    { label: 'AGEN', sub: 'MESH LANGGRAPH', code: '02', glyph: 'âš¡' },
-    { label: 'DATA', sub: 'RAG VEKTOR HIBRIDA', code: '03', glyph: 'ðŸ—„ï¸' },
-    { label: 'VISI', sub: 'VLM MULTIMODAL', code: '04', glyph: 'ðŸ‘ï¸' },
-    { label: 'PERISAI', sub: 'PERTAHANAN PROMPT', code: '05', glyph: 'ðŸ›¡ï¸' },
-    { label: 'NEURAL', sub: 'GRAF PENALARAN', code: '06', glyph: 'ðŸŒ' },
+    { label: 'LLM', sub: 'INTI TRANSFORMER', code: '01', glyph: '[AI]' },
+    { label: 'AGEN', sub: 'MESH LANGGRAPH', code: '02', glyph: '[NET]' },
+    { label: 'DATA', sub: 'RAG VEKTOR HIBRIDA', code: '03', glyph: '[RAG]' },
+    { label: 'VISI', sub: 'VLM MULTIMODAL', code: '04', glyph: '[VLM]' },
+    { label: 'PERISAI', sub: 'PERTAHANAN PROMPT', code: '05', glyph: '[SEC]' },
+    { label: 'NEURAL', sub: 'GRAF PENALARAN', code: '06', glyph: '[CORE]' },
   ],
   software: [
-    { label: 'SAC', sub: 'KONTROL KONTINU', code: '01', glyph: 'âš¡' },
-    { label: 'AMAN', sub: 'BATASAN LAGRANGIAN', code: '02', glyph: 'ðŸ›¡ï¸' },
-    { label: 'VISI', sub: 'PERSEPSI EDGE', code: '03', glyph: 'ðŸ‘ï¸' },
-    { label: 'KEBIJAKAN', sub: 'ACTOR-CRITIC NET', code: '04', glyph: 'ðŸ§ ' },
-    { label: 'CUDA', sub: 'PARALEL GPU HPC', code: '05', glyph: 'âš™ï¸' },
-    { label: 'KLINIS', sub: 'TELEMETRI ICU', code: '06', glyph: 'ðŸ“ˆ' },
+    { label: 'SAC', sub: 'KONTROL KONTINU', code: '01', glyph: '[SAC]' },
+    { label: 'AMAN', sub: 'BATASAN LAGRANGIAN', code: '02', glyph: '[SAFE]' },
+    { label: 'VISI', sub: 'PERSEPSI EDGE', code: '03', glyph: '[EDGE]' },
+    { label: 'KEBIJAKAN', sub: 'ACTOR-CRITIC NET', code: '04', glyph: '[NET]' },
+    { label: 'CUDA', sub: 'PARALEL GPU HPC', code: '05', glyph: '[CUDA]' },
+    { label: 'KLINIS', sub: 'TELEMETRI ICU', code: '06', glyph: '[DATA]' },
   ],
   softskill: [
-    { label: 'KLASTER', sub: 'MESH KOMPUTASI GPU', code: '01', glyph: 'ðŸ–¥ï¸' },
-    { label: 'FASTAPI', sub: 'INFERENSI SUB-10MS', code: '02', glyph: 'âš¡' },
-    { label: 'QDRANT', sub: 'VEKTOR TERDISTRIBUSI', code: '03', glyph: 'ðŸ—„ï¸' },
-    { label: 'DOCKER', sub: 'MICROSERVICES', code: '04', glyph: 'ðŸ“¦' },
-    { label: 'K8S', sub: 'ORKESTRASI POD', code: '05', glyph: 'â˜¸ï¸' },
-    { label: 'MLOPS', sub: 'TRAINING TERDISTRIBUSI', code: '06', glyph: 'âš™ï¸' },
+    { label: 'KLASTER', sub: 'MESH KOMPUTASI GPU', code: '01', glyph: '[MESH]' },
+    { label: 'FASTAPI', sub: 'INFERENSI SUB-10MS', code: '02', glyph: '[API]' },
+    { label: 'QDRANT', sub: 'VEKTOR TERDISTRIBUSI', code: '03', glyph: '[VEC]' },
+    { label: 'DOCKER', sub: 'MICROSERVICES', code: '04', glyph: '[DOC]' },
+    { label: 'K8S', sub: 'ORKESTRASI POD', code: '05', glyph: '[K8S]' },
+    { label: 'MLOPS', sub: 'TRAINING TERDISTRIBUSI', code: '06', glyph: '[OPS]' },
   ],
   default: [
-    { label: 'LLM', sub: 'PENALARAN', code: '01', glyph: 'ðŸ§ ' },
-    { label: 'DATA', sub: 'EMBEDDING', code: '02', glyph: 'ðŸ—„ï¸' },
-    { label: 'GPU', sub: 'INTI CUDA', code: '03', glyph: 'âš¡' },
-    { label: 'RL', sub: 'KONTINU', code: '04', glyph: 'âš™ï¸' },
-    { label: 'ARSIT', sub: 'PIPELINE', code: '05', glyph: 'ðŸ›¡ï¸' },
-    { label: 'LAYAN', sub: 'ENDPOINT', code: '06', glyph: 'ðŸŒ' },
+    { label: 'LLM', sub: 'PENALARAN', code: '01', glyph: '[AI]' },
+    { label: 'DATA', sub: 'EMBEDDING', code: '02', glyph: '[DATA]' },
+    { label: 'GPU', sub: 'INTI CUDA', code: '03', glyph: '[CUDA]' },
+    { label: 'RL', sub: 'KONTINU', code: '04', glyph: '[RL]' },
+    { label: 'ARSIT', sub: 'PIPELINE', code: '05', glyph: '[ARCH]' },
+    { label: 'LAYAN', sub: 'ENDPOINT', code: '06', glyph: '[API]' },
   ]
 };
 
@@ -219,7 +219,7 @@ function createCyberFaceTexture(face: FaceSpec, primaryColor: string, secondaryC
   ctx.font = '16px "Press Start 2P", monospace, sans-serif';
   ctx.fillStyle = primaryColor;
   ctx.textAlign = 'left';
-  ctx.fillText(`â–  NODE [${face.code}]`, pad + cut + 24, pad + 48);
+  ctx.fillText(`■ NODE [${face.code}]`, pad + cut + 24, pad + 48);
 
   ctx.textAlign = 'right';
   ctx.fillStyle = secondaryColor;
@@ -249,9 +249,10 @@ function createCyberFaceTexture(face: FaceSpec, primaryColor: string, secondaryC
 
   // Central Glyph Emblem
   ctx.globalAlpha = 0.9;
-  ctx.font = '54px "Press Start 2P", sans-serif';
+  ctx.font = 'bold 24px "JetBrains Mono", monospace';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
+  ctx.fillStyle = secondaryColor;
   ctx.fillText(face.glyph, 0, 0);
 
   ctx.restore();
@@ -292,7 +293,7 @@ function createCyberFaceTexture(face: FaceSpec, primaryColor: string, secondaryC
   ctx.globalAlpha = 0.75;
   ctx.font = '13px "Press Start 2P", monospace, sans-serif';
   ctx.fillStyle = secondaryColor;
-  ctx.fillText(isId ? 'STATUS: TERKUNCI Â· FREK: 144MHz' : 'STATUS: LOCKED Â· FREQ: 144MHz', 256, 465);
+  ctx.fillText(isId ? 'STATUS: LOCKED • FREQ: 144MHz' : 'STATUS: LOCKED • FREQ: 144MHz', 256, 465);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.minFilter = THREE.LinearMipmapLinearFilter;
@@ -609,7 +610,7 @@ const Loader = ({ type = 'default', className }: LoaderProps) => {
               style={{ backgroundColor: theme.primaryColor }}
             />
             <span className="font-pixel text-[8px] text-zinc-400 font-bold tracking-[0.15em]">{theme.tag}</span>
-            <span className="text-zinc-600">Â·</span>
+            <span className="text-zinc-400 font-mono text-[10px]">/</span>
             <span
               style={{ color: theme.primaryColor }}
               className="font-mono text-[10px] font-bold tracking-wider"

@@ -226,7 +226,7 @@ const PUBLICATIONS_ID: Publication[] = [
 type ViewPerspective = "stacked" | "grid" | "traditional";
 
 export function BlogArchive3D() {
-  const { language } = usePortfolio();
+  const { language, isDark } = usePortfolio();
   const isId = language === "id";
   const publications = isId ? PUBLICATIONS_ID : PUBLICATIONS_EN;
   const [activePerspective, setActivePerspective] = useState<ViewPerspective>("stacked");
@@ -244,7 +244,7 @@ export function BlogArchive3D() {
   return (
     <section
       id="publications"
-      className="relative w-full min-h-[900px] bg-[#030712] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden select-none"
+      className="relative w-full min-h-[900px] bg-background dark:bg-[#030712] text-foreground dark:text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden select-none"
     >
       {/* Tron Grid Atmosphere */}
       <div
@@ -289,10 +289,10 @@ export function BlogArchive3D() {
                 "w-full flex items-center gap-3 p-3 rounded-xl border text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300",
                 activePerspective === "stacked"
                   ? "bg-cyan-500/15 border-cyan-500 text-cyan-700 dark:text-cyan-300 shadow-[0_0_20px_rgba(0,240,255,0.25)]"
-                  : "bg-slate-100 dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
+                  : "bg-card dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
               )}
             >
-              <Layers className="w-4 h-4 text-cyan-500" />
+              <Layers className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>{isId ? "TAMPILAN TUMPUK" : "STACKED VIEW"}</span>
             </button>
 
@@ -302,10 +302,10 @@ export function BlogArchive3D() {
                 "w-full flex items-center gap-3 p-3 rounded-xl border text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300",
                 activePerspective === "grid"
                   ? "bg-cyan-500/15 border-cyan-500 text-cyan-700 dark:text-cyan-300 shadow-[0_0_20px_rgba(0,240,255,0.25)]"
-                  : "bg-slate-100 dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
+                  : "bg-card dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
               )}
             >
-              <Grid className="w-4 h-4 text-cyan-500" />
+              <Grid className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>{isId ? "TAMPILAN GRID" : "GRID VIEW"}</span>
             </button>
 
@@ -315,10 +315,10 @@ export function BlogArchive3D() {
                 "w-full flex items-center gap-3 p-3 rounded-xl border text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300",
                 activePerspective === "traditional"
                   ? "bg-cyan-500/15 border-cyan-500 text-cyan-700 dark:text-cyan-300 shadow-[0_0_20px_rgba(0,240,255,0.25)]"
-                  : "bg-slate-100 dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
+                  : "bg-card dark:bg-white/[0.02] border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20"
               )}
             >
-              <ListFilter className="w-4 h-4 text-cyan-500" />
+              <ListFilter className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>{isId ? "TAMPILAN TRADISIONAL" : "TRADITIONAL VIEW"}</span>
             </button>
           </div>
@@ -328,7 +328,7 @@ export function BlogArchive3D() {
             <div className="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-white/10">
               <button
                 onClick={handlePrev}
-                className="p-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95"
+                className="p-3 rounded-xl bg-card dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95 text-slate-700 dark:text-zinc-300"
                 title={isId ? "Publikasi sebelumnya" : "Previous publication"}
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -338,7 +338,7 @@ export function BlogArchive3D() {
               </div>
               <button
                 onClick={handleNext}
-                className="p-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95"
+                className="p-3 rounded-xl bg-card dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all active:scale-95 text-slate-700 dark:text-zinc-300"
                 title={isId ? "Publikasi selanjutnya" : "Next publication"}
               >
                 <ChevronRight className="w-5 h-5" />
@@ -388,30 +388,31 @@ export function BlogArchive3D() {
                       transition={{ type: "spring", damping: 24, stiffness: 220 }}
                       className={cn(
                         "absolute inset-0 rounded-2xl p-6 flex flex-col justify-between border cursor-pointer shadow-2xl backdrop-blur-xl transition-shadow duration-300 select-none",
-                        pub.coverGradient,
                         isCurrent
-                          ? "border-cyan-400 shadow-[0_20px_60px_rgba(0,240,255,0.4)] z-30 ring-2 ring-cyan-400/40"
-                          : "border-white/10 hover:border-white/30 z-10"
+                          ? "border-cyan-500 dark:border-cyan-400 shadow-[0_10px_35px_rgba(2,132,199,0.2)] dark:shadow-[0_20px_60px_rgba(0,240,255,0.4)] z-30 ring-2 ring-cyan-500/40 dark:ring-cyan-400/40"
+                          : "border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/30 z-10"
                       )}
                       style={{
-                        background: `linear-gradient(145deg, rgba(15,23,42,0.95) 0%, rgba(3,7,18,0.98) 100%)`,
+                        background: isDark
+                          ? `linear-gradient(145deg, rgba(15,23,42,0.95) 0%, rgba(3,7,18,0.98) 100%)`
+                          : `linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)`,
                       }}
                     >
                       {/* Top Header of Magazine Cover */}
                       <div>
-                        <div className="flex items-center justify-between pb-3 border-b border-white/15">
-                          <span className="text-[10px] font-mono font-bold tracking-widest text-cyan-400 uppercase">
+                        <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-white/15">
+                          <span className="text-[10px] font-mono font-bold tracking-widest text-cyan-600 dark:text-cyan-400 uppercase">
                             {pub.issueNumber}
                           </span>
-                          <span className="text-[9px] font-mono text-zinc-400">
+                          <span className="text-[9px] font-mono text-slate-500 dark:text-zinc-400">
                             {isId ? "TINJAUAN SEJAWAT" : "PEER REVIEWED"}
                           </span>
                         </div>
                         <div className="pt-4">
-                          <span className="text-[9px] font-mono font-black tracking-widest text-emerald-400 uppercase">
+                          <span className="text-[9px] font-mono font-black tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
                             {pub.category}
                           </span>
-                          <h3 className="text-xl sm:text-2xl font-black font-mono tracking-tight text-white mt-1 leading-snug">
+                          <h3 className="text-xl sm:text-2xl font-black font-mono tracking-tight text-slate-900 dark:text-white mt-1 leading-snug">
                             {pub.title}
                           </h3>
                         </div>
@@ -419,16 +420,16 @@ export function BlogArchive3D() {
 
                       {/* Cover Center Art / Abstract Blueprint Graphic */}
                       <div className="relative my-auto py-4 flex items-center justify-center">
-                        <div className="w-24 h-24 rounded-full border border-cyan-500/30 flex items-center justify-center relative">
-                          <div className="w-16 h-16 rounded-full border border-dashed border-cyan-400/60 animate-spin-slow" />
-                          <BookOpen className="w-7 h-7 text-cyan-300 absolute" />
+                        <div className="w-24 h-24 rounded-full border border-slate-300 dark:border-cyan-500/30 flex items-center justify-center relative bg-slate-50 dark:bg-transparent">
+                          <div className="w-16 h-16 rounded-full border border-dashed border-cyan-500/60 dark:border-cyan-400/60 animate-spin-slow" />
+                          <BookOpen className="w-7 h-7 text-cyan-600 dark:text-cyan-300 absolute" />
                         </div>
                       </div>
 
                       {/* Bottom Footer of Magazine Cover */}
-                      <div className="pt-4 border-t border-white/15 flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                      <div className="pt-4 border-t border-slate-200 dark:border-white/15 flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-zinc-400">
                         <span>RAIHAN G. WINATA</span>
-                        <span className="text-cyan-400 font-bold">{pub.date}</span>
+                        <span className="text-cyan-600 dark:text-cyan-400 font-bold">{pub.date}</span>
                       </div>
                     </motion.div>
                   );
@@ -446,17 +447,17 @@ export function BlogArchive3D() {
                   className={cn(
                     "p-4 rounded-xl border transition-all cursor-pointer",
                     idx === activeIndex
-                      ? "border-cyan-400 bg-cyan-950/40 shadow-[0_0_20px_rgba(0,240,255,0.2)]"
-                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                      ? "border-cyan-500 dark:border-cyan-400 bg-cyan-500/10 dark:bg-cyan-950/40 shadow-[0_0_20px_rgba(0,240,255,0.2)]"
+                      : "border-slate-200 dark:border-white/10 bg-card dark:bg-white/[0.02] hover:border-slate-300 dark:hover:border-white/20"
                   )}
                 >
-                  <span className="text-[9px] font-mono text-cyan-400 uppercase block">
+                  <span className="text-[9px] font-mono text-cyan-600 dark:text-cyan-400 uppercase block">
                     {pub.issueNumber}
                   </span>
-                  <h4 className="text-sm font-mono font-bold text-white mt-1 line-clamp-2">
+                  <h4 className="text-sm font-mono font-bold text-slate-900 dark:text-white mt-1 line-clamp-2">
                     {pub.title}
                   </h4>
-                  <span className="text-[9px] text-zinc-400 block mt-2">{pub.date}</span>
+                  <span className="text-[9px] text-slate-500 dark:text-zinc-400 block mt-2">{pub.date}</span>
                 </div>
               ))}
             </div>
@@ -471,19 +472,19 @@ export function BlogArchive3D() {
                   className={cn(
                     "p-4 rounded-xl border flex items-center justify-between cursor-pointer transition-all",
                     idx === activeIndex
-                      ? "border-cyan-400 bg-cyan-950/40"
-                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                      ? "border-cyan-500 dark:border-cyan-400 bg-cyan-500/10 dark:bg-cyan-950/40"
+                      : "border-slate-200 dark:border-white/10 bg-card dark:bg-white/[0.02] hover:border-slate-300 dark:hover:border-white/20"
                   )}
                 >
                   <div>
-                    <span className="text-[9px] font-mono text-cyan-400 uppercase">
+                    <span className="text-[9px] font-mono text-cyan-600 dark:text-cyan-400 uppercase">
                       {pub.issueNumber} • {pub.date}
                     </span>
-                    <h4 className="text-sm font-mono font-bold text-white mt-0.5">
+                    <h4 className="text-sm font-mono font-bold text-slate-900 dark:text-white mt-0.5">
                       {pub.title}
                     </h4>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-zinc-400 shrink-0 ml-2" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-zinc-400 shrink-0 ml-2" />
                 </div>
               ))}
             </div>

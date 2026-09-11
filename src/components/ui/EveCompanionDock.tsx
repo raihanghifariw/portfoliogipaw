@@ -153,7 +153,7 @@ export function EveCompanionDock() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
                 </span>
                 <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-cyan-400 uppercase">
-                  EVE COMPANION â€¢ {activeHint.tag}
+                  EVE COMPANION • {activeHint.tag}
                 </span>
               </div>
               <button

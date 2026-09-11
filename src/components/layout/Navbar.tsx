@@ -81,7 +81,7 @@ export const ABOUT_SUB_PAGES: NavSubItem[] = [
     previewTitle: "CUDA, PyTorch & Distributed Systems",
     previewDesc:
       "Low-latency tensor pipelines, Docker containerization, FastAPI endpoints, and hybrid vector indexing.",
-    previewMetric: "CUDA â€¢ PYTORCH â€¢ FASTAPI",
+    previewMetric: "CUDA • PYTORCH • FASTAPI",
   },
   {
     id: "biography",
@@ -137,7 +137,7 @@ export const ABOUT_SUB_PAGES: NavSubItem[] = [
     previewTitle: "Academic & Professional CV",
     previewDesc:
       "Bachelor of Computer Science, Universitas YARSI with CGPA 3.92/4.00 (Highest Distinction).",
-    previewMetric: "CGPA 3.92 â€¢ DISTINCTION",
+    previewMetric: "CGPA 3.92 • DISTINCTION",
   },
   {
     id: "blog",
@@ -594,25 +594,16 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* 3. Action Deck (Far Right): Contact CTA + Language Toggle + Theme Toggle */}
+        {/* 3. Action Deck (Far Right): Language Toggle + Theme Toggle */}
         <div className="hidden lg:flex items-center gap-2.5">
-          {/* Contact Direct CTA */}
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 py-2 px-4 rounded-full bg-white/[0.04] hover:bg-cyan-500/10 border border-cyan-500/30 hover:border-cyan-400/60 text-white font-mono font-bold text-xs tracking-wider uppercase backdrop-blur-md transition-all shadow-[0_0_15px_rgba(0,240,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.3)] group cursor-pointer"
-          >
-            <span>{t("nav.contact", "Contact")}</span>
-            <ArrowRight className="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-          </Link>
-
           {/* Language Switcher Button (ID / EN) */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-cyan-500/15 border border-cyan-500/30 hover:border-cyan-400/60 text-cyan-300 font-mono text-[11px] font-bold tracking-wider transition-all shadow-[0_0_12px_rgba(0,240,255,0.1)] cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/[0.04] hover:bg-cyan-500/15 border border-slate-200 dark:border-cyan-500/30 hover:border-cyan-500 text-cyan-700 dark:text-cyan-300 font-mono text-[11px] font-bold tracking-wider transition-all shadow-sm dark:shadow-[0_0_12px_rgba(0,240,255,0.1)] cursor-pointer"
             title="Switch Language (ID / EN)"
             aria-label="Switch Language between English and Indonesian"
           >
-            <Globe className="w-3.5 h-3.5 text-cyan-400" />
+            <Globe className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
             <span>{language.toUpperCase()}</span>
           </button>
 

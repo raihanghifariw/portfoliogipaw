@@ -14,9 +14,9 @@ const ROLE_LABELS: Record<Role, string> = {
 };
 
 const STICKERS: Record<Role, string[]> = {
-  ai: ["🤖", "🧠", "⚡", "👁️", "🧬", "⭐"],
-  data: ["📊", "🗄️", "🔢", "🛢️", "📈", "✨"],
-  software: ["🐛", "💻", "🔧", "🧩", "🚀", "⭐"],
+  ai: ["[AI]", "[RL]", "[GPU]", "[VLM]", "[CUDA]", "[NET]"],
+  data: ["[SQL]", "[ETL]", "[DATA]", "[PIPE]", "[PANDAS]", "[DB]"],
+  software: ["[DOCKER]", "[K8S]", "[FASTAPI]", "[NEXT]", "[REST]", "[API]"],
 };
 
 interface Burst {
@@ -109,7 +109,7 @@ export default function InteractiveBoxReality() {
                   }}
                   exit={{ opacity: 0, scale: 0.4 }}
                   transition={{ duration: 1.15, delay: s.delay, ease: [0.2, 0.9, 0.3, 1.2] }}
-                  className="absolute left-1/2 top-1/2 text-4xl md:text-5xl z-20 pointer-events-none select-none"
+                  className="absolute left-1/2 top-1/2 font-pixel text-[10px] md:text-xs px-2.5 py-1 bg-black/85 border border-cyan-400/60 text-cyan-300 rounded shadow-[0_0_12px_rgba(0,240,255,0.4)] z-20 pointer-events-none select-none"
                 >
                   {s.emoji}
                 </motion.span>

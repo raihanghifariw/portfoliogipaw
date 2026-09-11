@@ -17,7 +17,7 @@ const ACCENT_VAR: Record<string, string> = {
 export const CONVERGENCE_PRIMITIVES = [
   {
     id: 1,
-    code: "01 â€¢ FORMAL CONTROL",
+    code: "01 • FORMAL CONTROL",
     title: "MATHEMATICAL RIGOR",
     description: "Lagrangian corridors & provable safety bounds",
     icon: Binary,
@@ -29,7 +29,7 @@ export const CONVERGENCE_PRIMITIVES = [
   },
   {
     id: 2,
-    code: "02 â€¢ LATENT MODELS",
+    code: "02 • LATENT MODELS",
     title: "NEURAL PERCEPTION",
     description: "Continuous policy ensembles & latent space",
     icon: BrainCircuit,
@@ -41,7 +41,7 @@ export const CONVERGENCE_PRIMITIVES = [
   },
   {
     id: 3,
-    code: "03 â€¢ SYSTEM THROUGHPUT",
+    code: "03 • SYSTEM THROUGHPUT",
     title: "DISTRIBUTED SCALE",
     description: "Sub-15ms inference & GPU runtime pipelines",
     icon: Cpu,
@@ -57,7 +57,7 @@ export const CONVERGENCE_PRIMITIVES = [
 export const CONVERGENCE_PRIMITIVES_ID = [
   {
     id: 1,
-    code: "01 â€¢ KONTROL FORMAL",
+    code: "01 • KONTROL FORMAL",
     title: "KETEGASAN MATEMATIKA",
     description: "Koridor Lagrangian & batas keselamatan terbukti",
     icon: Binary,
@@ -69,7 +69,7 @@ export const CONVERGENCE_PRIMITIVES_ID = [
   },
   {
     id: 2,
-    code: "02 â€¢ MODEL LATEN",
+    code: "02 • MODEL LATEN",
     title: "PERSEPSI NEURAL",
     description: "Ensemble kebijakan kontinu & ruang laten terstruktur",
     icon: BrainCircuit,
@@ -81,7 +81,7 @@ export const CONVERGENCE_PRIMITIVES_ID = [
   },
   {
     id: 3,
-    code: "03 â€¢ THROUGHPUT SISTEM",
+    code: "03 • THROUGHPUT SISTEM",
     title: "SKALA TERDISTRIBUSI",
     description: "Inferensi sub-15ms & pipeline runtime GPU",
     icon: Cpu,

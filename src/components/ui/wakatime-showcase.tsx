@@ -131,10 +131,10 @@ export const WakaTimeShowcase = () => {
           <span>{isId ? "PELACAKAN WAKTU WAKATIME" : "WAKATIME TIME TRACKING"}</span>
         </div>
         <div className="absolute top-3 right-20 font-mono text-[10px] text-[#ff6b00]/60 tracking-widest pointer-events-none hidden md:block">
-          {isId ? "RITME: 6-9 JAM/HARI â€¢ ARSIP 4 TAHUN" : "PACING: 6-9 HRS/DAY â€¢ 4 YEARS ARCHIVE"}
+          {isId ? "RITME: 6-9 JAM/HARI • ARSIP 4 TAHUN" : "PACING: 6-9 HRS/DAY • 4 YEARS ARCHIVE"}
         </div>
         <div className="absolute bottom-3 left-6 font-mono text-[9px] text-[#ff6b00]/50 tracking-wider pointer-events-none hidden sm:block">
-          {isId ? "FULL-STACK â€¢ SISTEM â€¢ DSA â€¢ MACHINE LEARNING" : "FULL-STACK â€¢ SYSTEMS â€¢ DSA â€¢ MACHINE LEARNING"}
+          {isId ? "FULL-STACK • SISTEM • DSA • MACHINE LEARNING" : "FULL-STACK • SYSTEMS • DSA • MACHINE LEARNING"}
         </div>
         <div className="absolute bottom-3 right-6 font-mono text-[9px] text-[#ff6b00]/50 tracking-wider pointer-events-none hidden sm:block">
           {isId ? "10.950 JAM TEROTENTIKASI" : "10,950 HOURS AUTHENTICATED"}
@@ -192,7 +192,7 @@ export const WakaTimeShowcase = () => {
             <div className="mt-5 flex items-center gap-2.5 px-3.5 py-2 bg-[#050c1b] border border-[#ff6b00]/50 shadow-[0_0_10px_rgba(255,107,0,0.2)] w-fit">
               <span className="w-2 h-2 bg-[#ff6b00] animate-ping" />
               <span className="font-pixel text-[9px] text-[#ff6b00]">
-                {data?.user?.email || "ghifariwinata@gmail.com"} â€¢ {isId ? "AKTIF" : "ACTIVE"}
+                {data?.user?.email || "ghifariwinata@gmail.com"} • {isId ? "AKTIF" : "ACTIVE"}
               </span>
             </div>
           </div>
@@ -200,7 +200,7 @@ export const WakaTimeShowcase = () => {
 
         <div className="mt-8 pt-5 border-t border-[#ff6b00]/20 flex flex-wrap items-center justify-between gap-4">
           <p className="font-pixel text-[8px] text-zinc-400 tracking-wider">
-            {isId ? "[ ARSIP DEV 4 TAHUN â€¢ TELEMETRI WAKATIME ]" : "[ 4-YEAR DEV ARCHIVE â€¢ WAKATIME TELEMETRY ]"}
+            {isId ? "[ ARSIP DEV 4 TAHUN • TELEMETRI WAKATIME ]" : "[ 4-YEAR DEV ARCHIVE • WAKATIME TELEMETRY ]"}
           </p>
           <div className="flex items-center gap-2 text-zinc-400">
             <ShieldCheck className="w-4 h-4 text-[#00ff66]" />
@@ -239,7 +239,7 @@ export const WakaTimeShowcase = () => {
                   whileTap={{ scale: 0.95 }}
                   className="absolute top-6 right-6 z-50 px-4 py-2 bg-[#ff6b00] text-black font-pixel text-xs tracking-wider transition-all shadow-[3px_3px_0px_#fff] cursor-pointer"
                 >
-                  {isId ? "[âœ• TUTUP KONSOL]" : "[âœ• CLOSE DECK]"}
+                  {isId ? "[✕ TUTUP KONSOL]" : "[✕ CLOSE DECK]"}
                 </motion.button>
 
                 {/* Modal Header */}
@@ -255,8 +255,8 @@ export const WakaTimeShowcase = () => {
                   </h2>
                   <p className="text-zinc-400 text-xs font-mono">
                     {isId
-                      ? `[ ${data?.user?.email || "ghifariwinata@gmail.com"} â€¢ 4 TAHUN (6-9 JAM/HARI) â€¢ FULL-STACK, SISTEM, DSA & AI ]`
-                      : `[ ${data?.user?.email || "ghifariwinata@gmail.com"} â€¢ 4 YEARS (6-9 HRS/DAY) â€¢ FULL-STACK, SYSTEMS, DSA & AI ]`}
+                      ? `[ ${data?.user?.email || "ghifariwinata@gmail.com"} • 4 TAHUN (6-9 JAM/HARI) • FULL-STACK, SISTEM, DSA & AI ]`
+                      : `[ ${data?.user?.email || "ghifariwinata@gmail.com"} • 4 YEARS (6-9 HRS/DAY) • FULL-STACK, SYSTEMS, DSA & AI ]`}
                   </p>
                 </div>
 

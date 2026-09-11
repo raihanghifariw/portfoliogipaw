@@ -322,7 +322,7 @@ export const GitHubShowcase = () => {
           {isId ? "TELEMETRI REAL-TIME" : "REAL-TIME TELEMETRY"}
         </div>
         <div className="absolute bottom-3 left-6 font-mono text-[9px] text-[#00ff66]/50 tracking-wider pointer-events-none hidden sm:block">
-          COORDS: 106.8456Â° E, 6.2088Â° S [EDGE_NODE_JKT]
+          COORDS: 106.8456° E, 6.2088° S [EDGE_NODE_JKT]
         </div>
         <div className="absolute bottom-3 right-6 font-mono text-[9px] text-[#00ff66]/50 tracking-wider pointer-events-none hidden sm:block">
           {isId ? "API HTTPS TERENKRIPSI" : "SECURE HTTPS API"}
@@ -419,7 +419,7 @@ export const GitHubShowcase = () => {
             <div className="mt-5 flex items-center gap-2.5 px-3.5 py-2 bg-[#050c1b] border border-[#00ff66]/50 shadow-[0_0_10px_rgba(0,255,102,0.2)] w-fit">
               <span className="w-2 h-2 bg-[#00ff66] animate-ping" />
               <span className="font-pixel text-[9px] text-[#00ff66]">
-                @{GITHUB_USER} â€¢ {isId ? "AKTIF" : "ONLINE"}
+                @{GITHUB_USER} • {isId ? "AKTIF" : "ONLINE"}
               </span>
             </div>
           </div>
@@ -454,7 +454,7 @@ export const GitHubShowcase = () => {
                   whileTap={{ scale: 0.95 }}
                   className="absolute top-6 right-6 z-50 px-4 py-2 bg-[#00ff66] text-black font-pixel text-xs tracking-wider transition-all shadow-[3px_3px_0px_#fff] cursor-pointer"
                 >
-                  {isId ? "[âœ• TUTUP KONSOL]" : "[âœ• CLOSE DECK]"}
+                  {isId ? "[✕ TUTUP KONSOL]" : "[✕ CLOSE DECK]"}
                 </motion.button>
 
                 <div className='flex flex-col md:flex-row items-start justify-between w-full gap-6 mb-8 border-b-2 border-[#00ff66]/20 pb-6'>
@@ -470,8 +470,8 @@ export const GitHubShowcase = () => {
                     </h2>
                     <p className="text-zinc-400 text-xs font-mono">
                       {isId
-                        ? `[ ${data.stats.totalRepos} REPOSITORI â€¢ ${data.stats.allTimeCommits} TOTAL KOMIT â€¢ ARCADE SNAKE DIAKTIFKAN ]`
-                        : `[ ${data.stats.totalRepos} REPOSITORIES â€¢ ${data.stats.allTimeCommits} ALL-TIME COMMITS â€¢ ARCADE SNAKE ENABLED ]`}
+                        ? `[ ${data.stats.totalRepos} REPOSITORI • ${data.stats.allTimeCommits} TOTAL KOMIT • ARCADE SNAKE DIAKTIFKAN ]`
+                        : `[ ${data.stats.totalRepos} REPOSITORIES • ${data.stats.allTimeCommits} ALL-TIME COMMITS • ARCADE SNAKE ENABLED ]`}
                     </p>
                   </div>
                 </div>

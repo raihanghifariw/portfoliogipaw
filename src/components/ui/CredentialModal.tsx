@@ -71,7 +71,7 @@ export default function CredentialModal({
               <div className="flex items-center gap-3">
                 <div className="w-2.5 h-2.5 bg-cyan-400 animate-pulse shadow-[0_0_8px_#00f0ff]" />
                 <span className="text-[10px] font-display text-cyan-300 tracking-wider">
-                  {isId ? "SISTEM â€¢ MATRIKS_VERIFIKASI_KREDENSIAL" : "SYSTEM â€¢ CREDENTIAL_VERIFICATION_MATRIX"}
+                  {isId ? "SISTEM • MATRIKS_VERIFIKASI_KREDENSIAL" : "SYSTEM • CREDENTIAL_VERIFICATION_MATRIX"}
                 </span>
               </div>
               <button
@@ -91,7 +91,7 @@ export default function CredentialModal({
                   {/* Left Column: Official Embed Preview */}
                   <div className="md:col-span-5 flex flex-col items-center justify-center p-6 bg-[#040609] border border-cyan-500/30 relative group">
                     <div className="absolute top-2 left-2 text-[8px] font-mono text-cyan-400/70 uppercase">
-                      CREDLY_IFRAME_NODE â€¢ 150x270
+                      CREDLY_IFRAME_NODE • 150x270
                     </div>
 
                     <div className="my-4 flex items-center justify-center min-h-[290px] w-full">
@@ -122,7 +122,7 @@ export default function CredentialModal({
                       </h2>
                       <p className="text-xs font-mono text-cyan-300/80 mt-1 flex items-center gap-2">
                         <span>{isId ? "PENERBIT:" : "ISSUER:"} {credlyBadge.issuer}</span>
-                        <span>â€¢</span>
+                        <span>•</span>
                         <span>{isId ? "TAHUN:" : "YEAR:"} {credlyBadge.issueDate}</span>
                       </p>
                     </div>
@@ -176,7 +176,7 @@ export default function CredentialModal({
                         {certificate.title}
                       </h2>
                       <p className="text-xs font-mono text-zinc-400 mt-1">
-                        {isId ? "DITERBITKAN OLEH:" : "ISSUED BY:"} <span className="text-cyan-300">{certificate.issuer}</span> â€¢ {certificate.date}
+                        {isId ? "DITERBITKAN OLEH:" : "ISSUED BY:"} <span className="text-cyan-300">{certificate.issuer}</span> • {certificate.date}
                         {certificate.certNumber && (
                           <span className="block sm:inline sm:ml-2 text-zinc-500">
                             [REF: {certificate.certNumber}]

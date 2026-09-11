@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowUpRight, Award, Brain, Zap, Users } from "lucide-react";
@@ -80,7 +80,7 @@ export default function Testimonial1() {
     {
       value: 10,
       decimals: 0,
-      suffix: "Ã—",
+      suffix: "x",
       label: isId ? "AKSELERASI GPU" : "GPU SPEEDUP",
       subtext: isId ? "Pemrosesan Paralel" : "Parallel Processing",
       href: "/experience",
@@ -106,7 +106,7 @@ export default function Testimonial1() {
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#040814] text-white py-6 md:py-10 px-4 sm:px-6 md:px-10 lg:px-16 cyber-scanlines">
+    <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-background dark:bg-[#040814] text-foreground dark:text-white py-6 md:py-10 px-4 sm:px-6 md:px-10 lg:px-16 cyber-scanlines">
       {/* Background Tron Circuit Glow Accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00f0ff]/6 rounded-full blur-3xl pointer-events-none animate-circuit-pulse" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[450px] h-[450px] bg-[#00ff66]/6 rounded-full blur-3xl pointer-events-none animate-circuit-pulse" />
@@ -123,11 +123,11 @@ export default function Testimonial1() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 px-3.5 py-1.5 bg-[#050c1b] border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.15)] mb-4 sm:mb-6"
+          className="flex items-center gap-2 px-3.5 py-1.5 bg-card dark:bg-[#050c1b] border border-slate-200 dark:border-[#00f0ff]/40 shadow-sm dark:shadow-[0_0_15px_rgba(0,240,255,0.15)] mb-4 sm:mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-[#00ff66] shadow-[0_0_8px_#00ff66] animate-ping" />
-          <span className="font-pixel text-[8px] sm:text-[9px] text-[#00f0ff] uppercase tracking-[0.22em]">
-            {isId ? "TELEMETRI SISTEM â€¢ BENCHMARK UTAMA" : "SYSTEM TELEMETRY â€¢ CORE BENCHMARKS"}
+          <span className="font-pixel text-[8px] sm:text-[9px] text-cyan-600 dark:text-[#00f0ff] uppercase tracking-[0.22em]">
+            {isId ? "TELEMETRI SISTEM • BENCHMARK UTAMA" : "SYSTEM TELEMETRY • CORE BENCHMARKS"}
           </span>
         </motion.div>
 

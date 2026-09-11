@@ -133,7 +133,7 @@ const SHOWCASE_ITEMS_EN: ShowcaseItem[] = [
   {
     type: "doc",
     title: "YARSI Teaching Assistant - AI",
-    subtitle: "Faculty of IT â€¢ AI & ML Practicum",
+    subtitle: "Faculty of IT • AI & ML Practicum",
     issuer: "Universitas YARSI",
     image: FOLDER_CERTIFICATES[12].previewImage,
     tag: "TEACHING ASST",
@@ -271,7 +271,7 @@ const SHOWCASE_ITEMS_ID: ShowcaseItem[] = [
   {
     type: "doc",
     title: "Asisten Dosen AI YARSI",
-    subtitle: "Fakultas TI â€¢ Praktikum AI & ML",
+    subtitle: "Fakultas TI • Praktikum AI & ML",
     issuer: "Universitas YARSI",
     image: FOLDER_CERTIFICATES[12].previewImage,
     tag: "ASISTEN DOSEN",
@@ -427,7 +427,7 @@ const Column = ({ items, y, onItemClick, isId }: ColumnProps) => {
               {item.title}
             </h4>
             <p className="text-[10px] font-mono text-zinc-400 truncate">
-              {item.issuer} â€¢ {item.subtitle}
+              {item.issuer} • {item.subtitle}
             </p>
           </div>
         </div>
