@@ -7,7 +7,6 @@ import { PreloaderProvider } from "@/context/PreloaderContext";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import ChapterProgressTracker from "@/components/animations/ChapterProgressTracker";
 import PageTransitionProvider from "@/components/animations/PageTransitionProvider";
-import ArcPreloader from "@/components/animations/ArcPreloader";
 import MagneticCursor from "@/components/animations/MagneticCursor";
 import ScrollRevealObserver from "@/components/providers/ScrollRevealObserver";
 
@@ -137,8 +136,6 @@ export default function RootLayout({
           <PreloaderProvider>
             <SmoothScrollProvider>
               <PageTransitionProvider>
-                {/* First-visit Cinematic Preloader (SVG "hello" hand-drawn) — menyiarkan fase via PreloaderContext */}
-                <ArcPreloader />
                 {/* Custom Magnetic Cursor + Inspector HUD (desktop only) */}
                 <MagneticCursor />
                 {/* Sticky Chapter & Scroll Progress HUD Tracker */}
