@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Bot, Sparkles } from "lucide-react";
+import { X, Send, Bot, Sparkles } from "lucide-react";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 interface ChatMessage {
   id: string;
@@ -11,6 +12,7 @@ interface ChatMessage {
 }
 
 export default function ChatBotWidget() {
+  const { isDark } = usePortfolio();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
@@ -112,27 +114,34 @@ export default function ChatBotWidget() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 250 }}
-            className="absolute bottom-16 right-0 w-[360px] max-w-[calc(100vw-32px)] h-[490px] bg-[#0d0d14]/95 border border-white/15 backdrop-blur-xl rounded-2xl shadow-2xl shadow-black flex flex-col overflow-hidden"
+            className={`absolute bottom-16 right-0 w-[360px] max-w-[calc(100vw-32px)] h-[490px] backdrop-blur-xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border ${
+              isDark 
+                ? "bg-[#0d0d14]/95 border-white/15 shadow-black text-white" 
+                : "bg-white/95 border-slate-200 shadow-slate-300 text-slate-900"
+            }`}
           >
             {/* Header */}
-            <div className="p-4 bg-[#11111a] border-b border-white/10 flex items-center justify-between">
+            <div className={`p-4 border-b flex items-center justify-between ${
+              isDark ? "bg-[#11111a] border-white/10" : "bg-slate-50 border-slate-200"
+            }`}>
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-sky-400 flex items-center justify-center font-bold text-xs text-white text-on-accent">
                   AI
                 </div>
                 <div>
-                  <div className="font-display pixel-xs text-white">
+                  <div className={`font-display pixel-xs ${isDark ? "text-white" : "text-slate-900 font-bold"}`}>
                     RGW Neural Assistant
                   </div>
-                  <div className="text-[10px] font-heading text-emerald-400">
-                    â— ONLINE // TRAINED ON CV
+                  <div className="text-[10px] font-heading text-emerald-500 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
+                    <span>ONLINE // TRAINED ON CV</span>
                   </div>
                 </div>
               </div>
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-slate-400 hover:text-white"
+                className={`transition-colors ${isDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-slate-900"}`}
                 aria-label="Close chat"
               >
                 <X size={18} />
@@ -153,14 +162,18 @@ export default function ChatBotWidget() {
                     className={`p-3 rounded-xl text-xs leading-relaxed ${
                       msg.sender === "user"
                         ? "bg-purple-600 text-white text-on-accent rounded-tr-none"
-                        : "bg-[#161624] border border-white/10 text-slate-200 rounded-tl-none"
+                        : isDark
+                        ? "bg-[#161624] border border-white/10 text-slate-200 rounded-tl-none"
+                        : "bg-slate-100 border border-slate-200 text-slate-800 rounded-tl-none"
                     }`}
                   />
                 </div>
               ))}
 
               {isTyping && (
-                <div className="self-start bg-[#161624] border border-white/10 text-sky-400 p-2.5 rounded-xl rounded-tl-none text-[11px] font-mono flex items-center gap-1.5">
+                <div className={`self-start p-2.5 rounded-xl rounded-tl-none text-[11px] font-mono flex items-center gap-1.5 border ${
+                  isDark ? "bg-[#161624] border-white/10 text-sky-400" : "bg-slate-100 border-slate-200 text-sky-600"
+                }`}>
                   <Sparkles size={12} className="animate-spin" />
                   <span>Reasoning...</span>
                 </div>
@@ -169,12 +182,18 @@ export default function ChatBotWidget() {
             </div>
 
             {/* Quick Prompt Chips */}
-            <div className="px-3 py-2 border-t border-white/10 bg-black/20 flex gap-1.5 overflow-x-auto no-scrollbar">
+            <div className={`px-3 py-2 border-t flex gap-1.5 overflow-x-auto no-scrollbar ${
+              isDark ? "border-white/10 bg-black/20" : "border-slate-200 bg-slate-50"
+            }`}>
               {promptChips.map((chip) => (
                 <button
                   key={chip.label}
                   onClick={() => handleSend(chip.query)}
-                  className="px-2.5 py-1 rounded-full font-heading text-xs bg-white/5 hover:bg-cyan-400 hover:text-slate-950 border border-white/10 text-cyan-300 whitespace-nowrap transition-colors"
+                  className={`px-2.5 py-1 rounded-full font-heading text-xs whitespace-nowrap transition-colors border ${
+                    isDark
+                      ? "bg-white/5 hover:bg-cyan-400 hover:text-slate-950 border-white/10 text-cyan-300"
+                      : "bg-white hover:bg-cyan-600 hover:text-white border-slate-200 text-cyan-700 shadow-sm"
+                  }`}
                 >
                   {chip.label}
                 </button>
@@ -187,14 +206,20 @@ export default function ChatBotWidget() {
                 e.preventDefault();
                 handleSend(inputVal);
               }}
-              className="p-3 bg-[#11111a] border-t border-white/10 flex items-center gap-2"
+              className={`p-3 border-t flex items-center gap-2 ${
+                isDark ? "bg-[#11111a] border-white/10" : "bg-slate-50 border-slate-200"
+              }`}
             >
               <input
                 type="text"
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 placeholder="Ask Raihan's AI assistant..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 font-body text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                className={`flex-1 rounded-full px-4 py-2 font-body text-xs focus:outline-none focus:border-cyan-400 border ${
+                  isDark
+                    ? "bg-white/5 border-white/10 text-white placeholder:text-slate-500"
+                    : "bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 shadow-inner"
+                }`}
               />
               <button
                 type="submit"
